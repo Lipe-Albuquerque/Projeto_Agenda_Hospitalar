@@ -1,58 +1,195 @@
 package br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud;
 
-import java.util.HashMap;
+import static br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud.ICrud.opcoes;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+
+import br.com.entra21.modelo2022.principal.BancoFicticio;
+import br.com.entra21.modelo2022.principal.Menu;
+import br.com.entra21.modelo2022.principal.modelobase.Medico;
 import br.com.entra21.modelo2022.principal.modelobase.Paciente;
 import br.com.entra21.modelo2022.principal.modelobase.Pessoa;
 
-public class PacienteCRUD extends Pessoa implements ICrud<Paciente>{
+public class PacienteCRUD extends Menu implements ICrud<Paciente> {
+
+	private HashMap<String, Paciente> lista = BancoFicticio.pacientes;
+
+	public PacienteCRUD() {
+		super("Pacientes", opcoes);
+	}
+
+	@Override
+	public byte capturarOpcao() {
+		byte opcao = super.capturarOpcao();
+
+		switch (opcao) {
+
+		case 0:
+			System.out.println("Voltando ao menu Cadastro...");
+			break;
+		case 1:
+			listar(lista);
+			break;
+		case 2:
+			adicionar();
+			break;
+		case 3:
+			exibirDetalhes(buscar(capturarChave()));
+			break;
+		case 4:
+			editar(capturarChave());
+			break;
+		case 5:
+			deletar(capturarChave());
+			break;
+
+		default:
+			System.out.println("Opção inválida para o menu de " + super.getTitulo());
+			break;
+
+		}
+
+		return opcao;
+	}
+
+	public PacienteCRUD(String titulo, ArrayList<String> opcoes) {
+		super(titulo, opcoes);
+	}
 
 	@Override
 	public void listar(HashMap<String, Paciente> lista) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
+		for (Paciente paciente : lista.values()) {
+
+			System.out.println("\t" + paciente.getName() + " - " + paciente.getPatologia() + " - " + paciente.getAge()
+					+ " - " + paciente.getSex() + " - " + paciente.getCpf() + " - " + paciente.getNameMother() + " - "
+					+ paciente.getNameFather() + " - " + paciente.getEmail() + paciente.getTelephone() + " - "
+					+ paciente.getStreetAddress() + " - " + paciente.getNumberAddress() + paciente.getZipCode() + " - "
+					+ paciente.getCity() + " - " + paciente.getState() + " - " + paciente.getCountry() + " - "
+					+ paciente.getDataCadastro() + " - " + paciente.getDataAtualizada());
+
+		}
+
+		System.out.println("------------- QUANTIDADE (" + lista.size() + ") --------------");
 	}
 
 	@Override
 	public void adicionar() {
-		// TODO Auto-generated method stub
-		
+		Paciente novo = capturarValores();
+		if (buscar(novo) == null) {
+			lista.put(novo.getName(), novo);
+		} else {
+			System.out.println("Jï¿½ existe um registro com CHAVE:" + novo.getName());
+
+		}
 	}
 
 	@Override
 	public Paciente buscar(Paciente chave) {
-		// TODO Auto-generated method stub
-		return null;
+		return lista.get(chave.getName());
+
 	}
 
 	@Override
 	public void editar(Paciente chave) {
-		// TODO Auto-generated method stub
-		
+		Paciente PacienteAtual = buscar(chave);
+		if (PacienteAtual == null) {
+			System.out.println("Não existe um registro com CHAVE:" + chave.getName());
+		} else {
+			lista.put(chave.getName(), capturarValores());
+			System.out.println("Dados atualizados");
+		}
+
 	}
 
 	@Override
 	public void deletar(Paciente chave) {
-		// TODO Auto-generated method stub
-		
+
+		Paciente PacienteAtual = buscar(chave);
+		if (PacienteAtual == null) {
+			System.out.println("Não existe um registro com CHAVE:" + chave.getName());
+		} else {
+			lista.remove(chave.getName());
+			System.out.println("Item excluido");
+		}
+
 	}
 
 	@Override
 	public Paciente capturarChave() {
-		// TODO Auto-generated method stub
-		return null;
+		Paciente paciente = new Paciente();
+		System.out.println("Informe a CHAVE");
+		paciente.setName(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
+		return paciente;
+
 	}
 
 	@Override
 	public Paciente capturarValores() {
-		// TODO Auto-generated method stub
-		return null;
+
+		Paciente paciente = new Paciente();
+
+		System.out.println("Informe o Nome:");
+		paciente.setName(super.getEntrada().next());
+
+		System.out.println("Informe a Patologia:");
+		paciente.setPatologia(super.getEntrada().next());
+
+		System.out.println("Informe o Idade:");
+		paciente.setAge(super.getEntrada().nextByte());
+
+		System.out.println("Informe o Sexo:");
+		paciente.setSex(super.getEntrada().next());
+
+		System.out.println("Informe o Cpf:");
+		paciente.setCpf(super.getEntrada().next());
+
+		System.out.println("Informe o Nome da Mãe:");
+		paciente.setNameMother(super.getEntrada().next());
+
+		System.out.println("Informe o Nome do Pai:");
+		paciente.setNameFather(super.getEntrada().next());
+
+		System.out.println("Informe o e-mail:");
+		paciente.setEmail(super.getEntrada().next());
+
+		System.out.println("Informe o Telefone:");
+		paciente.setTelephone(super.getEntrada().next());
+
+		System.out.println("Informe o Nome da Rua:");
+		paciente.setStreetAddress(super.getEntrada().next());
+
+		System.out.println("Informe o Número da Casa:");
+		paciente.setNumberAddress(super.getEntrada().next());
+
+		System.out.println("Informe o Código Postal");
+		paciente.setZipCode(super.getEntrada().next());
+
+		System.out.println("Informe a Cidade:");
+		paciente.setCity(super.getEntrada().next());
+
+		System.out.println("Informe o Estado:");
+		paciente.setState(super.getEntrada().next());
+
+		System.out.println("Informe o País:");
+		paciente.setCountry(super.getEntrada().next());
+
+		return paciente;
+
 	}
 
 	@Override
 	public void exibirDetalhes(Paciente completo) {
-		// TODO Auto-generated method stub
-		
+		if (completo == null) {
+			System.out.println("Não foi possivel exibir os detalhes, item não localizado");
+		} else {
+			System.out.println(completo.toString());
+		}
+
 	}
 
 }

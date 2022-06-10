@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 import br.com.entra21.modelo2022.principal.Menu;
 import br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud.MedicoCRUD;
+import br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud.PacienteCRUD;
 
 
 public class MenuCadastro extends Menu{
@@ -23,7 +24,7 @@ public class MenuCadastro extends Menu{
 			break;
 
 		case 2:
-
+			new PacienteCRUD().executarMenu();;
 			break;
 
 		default:

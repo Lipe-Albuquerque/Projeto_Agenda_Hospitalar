@@ -7,11 +7,13 @@ import java.util.Scanner;
 
 import br.com.entra21.modelo2022.principal.menu.entrar.MenuEntrar;
 
+
 public class Main {
 	private static Scanner input = new Scanner(System.in);
 	private static ArrayList<String> options;
 
 	public static void main(String[] args) {
+		
 		BancoFicticio.gerarBancoDados();
 		
 		byte option;
@@ -28,14 +30,10 @@ public class Main {
 				break;
 
 			case 2:
-
+				
 				break;
 
 			case 3:
-
-				break;
-
-			case 4:
 
 				break;
 

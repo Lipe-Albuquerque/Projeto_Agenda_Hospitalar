@@ -56,24 +56,24 @@ public class BancoFicticio {
 						LocalDateTime.now()));
 
 		// pacientes de Smallville
-		pacientes.put("123.563.159-85",
+		pacientes.put("12356315985",
 				new Paciente("Anthony Stark", (byte) 58, "Masculino", "123.563.159-85", "Maria Stark", "Howard Stark",
 						"iron_man@gmail.com", " 48 98845-2274", "Av da F�", "123", "56600-006", "Smallville", "SC",
 						"BR", "Troca de lentes", LocalDate.of(2022, 12, 30), LocalDateTime.now()));
 
-		pacientes.put("123.456.789-96",
+		pacientes.put("12345678996",
 				new Paciente("Natasha Romanoff", (byte) 32, "Feminino", "123.456.789-96", "Melina Vostokoff",
 						"Alexei Shostakov", "black_widowahoo.com", " 47 99656-8987", "Rua das Flores", "99",
 						"56600-006", "Smallville", "SC", "BR", "Dores fortes de cabe�a",
 						LocalDate.of(2022, 12, 30), LocalDateTime.now()));
 
 		// pacientes de Joa�aba
-		pacientes.put("023.563.698.96",
+		pacientes.put("02356369896",
 				new Paciente("Thor Odinson", (byte) 33, "Masculino", "023.563.698.96", "Joro", "Odin",
 						"thunder_god@gmail.com", " 47 98874-6323", "Av Mjolnir", "1903", "89600-000", "Joa�aba", "SC",
 						"BR", "Enxaqueca", LocalDate.of(2022, 12, 30), LocalDateTime.now()));
 
-		pacientes.put("023.102.558-85",
+		pacientes.put("02310255885",
 				new Paciente("Wanda Maximoff", (byte) 28, "Feminino", "023.102.558-85", "Magda Maximoff",
 						"Erik Lehnsherr", "scarlet_witch@gmail.com", "49 98847-1002", "Av Vis�o", "456", "89600-000",
 						"Joa�aba", "SC", "BR", "Exames de rotina", LocalDate.of(2022, 12, 30),

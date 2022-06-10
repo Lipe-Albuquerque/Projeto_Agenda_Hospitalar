@@ -9,11 +9,13 @@ import br.com.entra21.modelo2022.principal.Menu;
 import br.com.entra21.modelo2022.principal.modelobase.Medico;
 
 public class MedicoCRUD extends Menu implements ICrud<Medico>{
+	
 	private HashMap<String, Medico> lista = BancoFicticio.medicos;
 	
 	public MedicoCRUD() {
 		super("Medicos", opcoes);
 	}
+	
 	
 	@Override
 	public byte capturarOpcao() {

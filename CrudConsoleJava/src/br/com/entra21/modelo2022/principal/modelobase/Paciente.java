@@ -50,5 +50,9 @@ public class Paciente extends Pessoa {
 	public void setDataAtualizada(LocalDateTime dataAtualizada) {
 		this.dataAtualizada = dataAtualizada;
 	}
-
+	
+	public String toString() {
+		return getName()+":\n Patologia: " + getPatologia() + "\n Data de Cadastro: " + dataCadastro + "\n Data de Atualização:" + dataAtualizada + "\n Cpf: "+ getCpf()  ;
+	}
+	
 }

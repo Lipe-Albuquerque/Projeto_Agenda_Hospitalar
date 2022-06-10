@@ -31,6 +31,7 @@ public class Menu {
 
 		} while (capturarOpcao() != 0);
 	}
+	
 
 	public byte capturarOpcao() {
 		byte opcao;

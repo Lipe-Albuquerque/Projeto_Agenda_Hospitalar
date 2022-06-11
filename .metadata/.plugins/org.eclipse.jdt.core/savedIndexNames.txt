@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\filip\OneDrive\Área de Trabalho\projetoAula\.metadata\.plugins\org.eclipse.jdt.core
+2014957666.index
+1865797976.index
+2877742915.index

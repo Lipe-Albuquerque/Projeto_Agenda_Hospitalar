@@ -11,7 +11,11 @@ public class MenuEntrar{
 		new MenuCadastro("Cadastros", new ArrayList<String>(Arrays.asList("Medicos", "Pacientes"))).executarMenu();
 	}
 	
-	public static void sobre() {}
+	
+	
+	public static void sobre() {
+		
+	}
 	
 
 }

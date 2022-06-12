@@ -21,19 +21,16 @@ public class BancoFicticio {
 	}
 
 	private static void inicializarMedicos() {
-		// medico Imbituba
 		medicos.put("916.149.670-75",
 				new Medico("Robin Pereira", (byte) 18, "Outro", "916.149.670-75", "Robina Pereira", "Robin Wood",
 						"robin_batata123@yahoo.com", "49 98874-6352", "Rua Wood", "100", "88780-000", "Imbituba", "SC",
 						"BR", "Dentista", "CRM/SC 698547", LocalDate.of(2022, 03, 04)));
 
-		// medico Smallville
 		medicos.put("023.236.896-45",
 				new Medico("Clark Kent", (byte) 35, "Masculino", "023.236.896-45", "Martha Kent", "Jonathan Kent",
 						"clarkinho_56@gmail.com", " 47 98852-9633", "Rua dos El", "1569", "56600-006", "Smallville",
 						"SC", "BR", "Oftalmologista", "CRM/SC 698512", LocalDate.of(2022, 01, 03)));
 
-		// medico Joaçaba
 		medicos.put("897.123.489-63",
 				new Medico("Diana Prince", (byte) 35, "Feminino", "897.123.489-63", "Hipolita Prince", "Zeus Prince",
 						"diana_prince@gmail.com", " 48 98854-7888", "Av das Pedras", "78", "89600-000", "Joaçaba", "SC",

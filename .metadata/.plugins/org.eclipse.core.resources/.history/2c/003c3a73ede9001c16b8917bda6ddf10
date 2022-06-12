@@ -1,0 +1,28 @@
+package br.com.entra21.modelo2022.principal;
+
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+
+import br.com.entra21.modelo2022.principal.modelobase.Medico;
+import br.com.entra21.modelo2022.principal.modelobase.Paciente;
+
+public class BancoFicticio {
+
+	public static HashMap<String, Paciente> pacientes = new HashMap<>();
+
+	public static HashMap<String, Medico> medicos = new HashMap<>();
+
+	public static void gerarBancoDados() {
+		inicializarMedicos();
+		inicializarPacientes();
+	}
+
+	private static void inicializarMedicos() {
+		
+	}
+
+	private static void inicializarPacientes() {
+	}
+}

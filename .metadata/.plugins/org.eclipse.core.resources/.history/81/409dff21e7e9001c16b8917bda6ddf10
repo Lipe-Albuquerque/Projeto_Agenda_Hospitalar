@@ -1,0 +1,9 @@
+package br.com.entra21.modelo2022.principal.modelobase;
+
+import java.time.LocalDateTime;
+
+public class Medico {
+	String especialidade;
+	String crm;
+	private LocalDateTime turno;
+}

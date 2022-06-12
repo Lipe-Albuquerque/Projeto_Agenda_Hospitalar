@@ -56,4 +56,11 @@ public class Medico extends Pessoa {
 		this.turno = turno;
 	}
 
+	@Override
+	public String toString() {
+		return getName()+":\n especialidade: " + especialidade + "\n crm: " + crm + "\n turno: " + turno + "\n Cpf: "+ getCpf()  ;
+	}
+	
+	
+
 }

@@ -1,5 +1,6 @@
 package br.com.entra21.modelo2022.principal.modelobase;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Paciente extends Pessoa {
@@ -14,7 +15,7 @@ public class Paciente extends Pessoa {
 
 	public Paciente(String name, byte age, String sex, String cpf, String nameMother, String nameFather, String email,
 			String telephone, String streetAddress, String numberAddress, String zipCode, String city, String state,
-			String country, String patologia, LocalDateTime dataCadastro, LocalDateTime dataAtualizada) {
+			String country, String patologia, LocalDate localDate, LocalDateTime dataAtualizada) {
 		super(name, age, sex, cpf, nameMother, nameFather, email, telephone, streetAddress, numberAddress, zipCode,
 				city, state, country);
 	}

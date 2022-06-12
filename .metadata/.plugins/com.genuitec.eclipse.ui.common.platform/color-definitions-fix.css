@@ -2063,6 +2063,7 @@ IEclipsePreferences#org-eclipse-ui-editors {
 		'TextOccurrenceIndicationColor=27, 98, 145'
 		'asOccurencesIndicationColor=65,65,4'
 		'breakpointIndicationColor=49,115,187'
+		'currentIPColor=68,71,90'
 		'currentLineColor=50,57,62'
 		'deletionIndicationColor=255,184,108'
 		'filteredSearchResultIndicationColor=26,95,140'
@@ -2088,6 +2089,7 @@ IEclipsePreferences#org-eclipse-ui-editors {
 		'searchResultIndication=true'
 		'searchResultIndicationColor=68,71,90'
 		'searchResultTextStyle=BOX'
+		'secondaryIPColor=68,71,90'
 		'spellingIndicationColor=253,170,211'
 		'writeOccurrenceIndicationColor=65,65,4'
 }

@@ -1,0 +1,66 @@
+package br.com.entra21.modelo2022.principal;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	private static Scanner input = new Scanner(System.in);
+	private static ArrayList<String> options;
+
+	public static void main(String[] args) {
+		byte option;
+		do {
+			System.out.println(gerarMenu());
+			option = input.nextByte();
+			switch (option) {
+			case 0:
+				System.out.println("Obrigada por usar o programa!!!");
+				break;
+
+			case 1:
+
+				break;
+
+			case 2:
+
+				break;
+
+			case 3:
+
+				break;
+
+			case 4:
+
+				break;
+
+			default:
+				System.out.println("");
+				break;
+			}
+		} while (option != 0);
+		System.out.println("Obrigado por utilizar nosso serviço! Volte logo...");
+
+	}
+
+	private static String gerarMenu() {
+		if (options == null) {
+			options = new ArrayList<>(Arrays.asList("Cadastrar", "Agendar", "Listar", "Buscar"));
+		}
+
+		String menu = "Bem vindo ao programa de agenda hospitalar";
+		menu += "\n\t0 - Sair ";
+
+		for (int option = 0; option < options.size(); option++) {
+			menu += "\n\t" + (option + 1) + " - " + options.get(option);
+		}
+
+		menu += "|------------------------------------------------------------|";
+		menu += "\n Escolha uma opcao ";
+		menu += "|------------------------------------------------------------|\n";
+		
+		return menu;
+	}
+
+}

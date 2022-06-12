@@ -1,0 +1,34 @@
+package br.com.entra21.modelo2022.principal.menu.entrar;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import br.com.entra21.modelo2022.principal.Menu;
+
+public class MenuEntrar extends Menu {
+
+	public MenuEntrar(String titulo, ArrayList<String> opcoes) {
+		super(titulo, opcoes);
+
+	}
+
+	public byte capturarOpcao() {
+		byte opcao = super.capturarOpcao();
+
+		switch (opcao) {
+		case 1:
+			new MenuCadastro("Cadastros", new ArrayList<String>(Arrays.asList("Medicos", "Pacientes"))).executarMenu();
+			break;
+
+		case 2:
+
+			break;
+
+		default:
+			break;
+		}
+		return opcao;
+		
+	}
+
+}

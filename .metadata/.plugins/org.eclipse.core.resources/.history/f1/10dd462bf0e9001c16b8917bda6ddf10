@@ -1,0 +1,8 @@
+package br.com.entra21.modelo2022.principal.cadastrar;
+
+public class MenuCadastros {
+	Scanner inp
+	do {
+		
+	}while ();
+}

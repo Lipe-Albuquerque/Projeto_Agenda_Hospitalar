@@ -12,6 +12,13 @@ public class Paciente extends Pessoa {
 
 	}
 
+	public Paciente(String name, byte age, String sex, String cpf, String nameMother, String nameFather, String email,
+			String telephone, String streetAddress, String numberAddress, String zipCode, String city, String state,
+			String country, String patologia, LocalDateTime dataCadastro, LocalDateTime dataAtualizada) {
+		super(name, age, sex, cpf, nameMother, nameFather, email, telephone, streetAddress, numberAddress, zipCode,
+				city, state, country);
+	}
+
 	public Paciente(String patologia, LocalDateTime dataCadastro, LocalDateTime dataAtualizada) {
 		super();
 		this.patologia = patologia;

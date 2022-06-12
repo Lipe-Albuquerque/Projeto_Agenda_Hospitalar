@@ -1,12 +1,12 @@
-Double\ quoted\ string=0,0,0,0,0,255,198,0
+Double\ quoted\ string=0,0,0,0,0,241,250,140
 Double\\\ quoted\\\ string=0,0,0,0,0,40,161,152
 Identifier=0,0,0,0,0,99,140,177
 Keyword=0,0,0,0,0,197,108,29
-Multi-line\ comment=0,0,0,0,0,199,221,12
+Multi-line\ comment=0,0,0,0,0,98,114,164
 Multi-line\\\ comment=0,0,0,0,0,85,110,117
 Others=0,0,0,0,0,197,204,204
-Single\ quoted\ string=0,0,0,0,0,255,198,0
-Single-line\ comment=0,0,0,0,0,199,221,12
+Single\ quoted\ string=0,0,0,0,0,241,250,140
+Single-line\ comment=0,0,0,0,0,98,114,164
 Single-line\\\ comment=0,0,0,0,0,85,110,117
 Single\\\ quoted\\\ string=0,0,0,0,0,40,161,152
 Type=0,0,0,0,0,197,108,29

@@ -1,5 +1,0 @@
-package br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud;
-
-public interface ICrud {
-
-}

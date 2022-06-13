@@ -30,7 +30,7 @@ public class Main {
 				break;
 
 			case 2:
-				
+				MenuEntrar.entrar();
 				break;
 
 			case 3:

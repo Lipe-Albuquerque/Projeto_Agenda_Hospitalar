@@ -10,12 +10,12 @@ public class MenuEntrar{
 	
 	public static void entrar(){
 		
-		new MenuCadastro("Cadastros", new ArrayList<String>(Arrays.asList("Medicos", "Pacientes"))).executarMenu();
+		new MenuCadastro("Cadastros", new ArrayList<String>(Arrays.asList("Medicos", "Pacientes", "Agendamentos"))).executarMenu();
 	}
 	
 	public static void sobre() {
 		
-		
+		System.out.println("");
 		
 	}
 	

@@ -98,9 +98,9 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	public void editar(Paciente chave) {
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("Não existe um registro com CHAVE:" + chave.getName());
+			System.out.println("Não existe um registro com CHAVE:" + chave.getCpf());
 		} else {
-			lista.put(chave.getName(), capturarValores());
+			lista.put(chave.getCpf(), capturarValores());
 			System.out.println("Dados atualizados");
 		}
 
@@ -111,9 +111,9 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("Não existe um registro com CHAVE:" + chave.getName());
+			System.out.println("Não existe um registro com CHAVE:" + chave.getCpf());
 		} else {
-			lista.remove(chave.getName());
+			lista.remove(chave.getCpf());
 			System.out.println("Item excluido");
 		}
 
@@ -123,7 +123,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	public Paciente capturarChave() {
 		Paciente paciente = new Paciente();
 		System.out.println("Informe a CHAVE");
-		paciente.setName(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
+		paciente.setCpf(super.getEntrada().next()); //.replaceAll("\\p{Punct}", "")
 		return paciente;
 
 	}

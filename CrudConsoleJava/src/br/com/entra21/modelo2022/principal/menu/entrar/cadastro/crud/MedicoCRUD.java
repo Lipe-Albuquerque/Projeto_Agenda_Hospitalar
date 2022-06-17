@@ -8,6 +8,7 @@ import br.com.entra21.modelo2022.principal.BancoFicticio;
 import br.com.entra21.modelo2022.principal.Menu;
 import br.com.entra21.modelo2022.principal.modelobase.Medico;
 
+
 public class MedicoCRUD extends Menu implements ICrud<Medico>{
 	
 	private HashMap<String, Medico> lista = BancoFicticio.medicos;
@@ -50,14 +51,14 @@ public class MedicoCRUD extends Menu implements ICrud<Medico>{
 
 	public MedicoCRUD(String titulo, ArrayList<String> opcoes) {
 		super(titulo, opcoes);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public void listar(HashMap<String, Medico> lista) {
 		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
 		for (Medico medico : lista.values()) {
-			System.out.println("\t" + medico.getName() + " - " + medico.getAge() + " - " + medico.getCrm());
+			System.out.println("\t" + medico.getCpf() + " - " + medico.getAge() + " - " +  medico.getName());
 		}
 		
 		System.out.println("------------- QUANTIDADE (" + lista.size()  + ") --------------");
@@ -67,7 +68,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico>{
 
 	@Override
 	public void adicionar() {
-		// TODO Auto-generated method stub
+		
 		Medico novo = capturarValores();
 		if (buscar(novo) == null) {
 			lista.put(novo.getName(),novo);
@@ -79,13 +80,13 @@ public class MedicoCRUD extends Menu implements ICrud<Medico>{
 
 	@Override
 	public Medico buscar(Medico chave) {
-		// TODO Auto-generated method stub
-		return lista.get(chave.getName());
+
+		return lista.get(chave.getCpf());
 	}
 
 	@Override
 	public void editar(Medico chave) {
-		// TODO Auto-generated method stub
+
 		Medico medicoAtual = buscar(chave);
 		if (medicoAtual == null) {
 			System.out.println("N�o existe um registro com CHAVE:" + chave.getName());
@@ -97,7 +98,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico>{
 
 	@Override
 	public void deletar(Medico chave) {
-		// TODO Auto-generated method stub
+
 		Medico medicoAtual = buscar(chave);
 		if (medicoAtual == null) {
 			System.out.println("N�o existe um registro com CHAVE:" + chave.getName());
@@ -110,7 +111,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico>{
 
 	@Override
 	public Medico capturarChave() {
-		// TODO Auto-generated method stub
+
 		Medico formulario = new Medico();
 		System.out.println("Informe a CHAVE"  );
 		formulario.setName(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
@@ -120,14 +121,57 @@ public class MedicoCRUD extends Menu implements ICrud<Medico>{
 
 	@Override
 	public Medico capturarValores() {
-		// TODO Auto-generated method stub
+
 	Medico formulario = new Medico();
 		
-		System.out.println("Informe o nome" );
-		formulario.setName(super.getEntrada().next());
+	
 
-		System.out.println("Informe o cpf:");
-		formulario.setCpf(super.getEntrada().next());
+	System.out.println("Informe o Nome:");
+	formulario.setName(super.getEntrada().next());
+
+	System.out.println("Informe a Crm:");
+	formulario.setCrm(super.getEntrada().next());
+
+	System.out.println("Informe o Idade:");
+	formulario.setAge(super.getEntrada().nextByte());
+
+	System.out.println("Informe o Sexo:");
+	formulario.setSex(super.getEntrada().next());
+
+	System.out.println("Informe o Cpf:");
+	formulario.setCpf(super.getEntrada().next());
+
+	System.out.println("Informe o Nome da M�e:");
+	formulario.setNameMother(super.getEntrada().next());
+
+	System.out.println("Informe o Nome do Pai:");
+	formulario.setNameFather(super.getEntrada().next());
+
+	System.out.println("Informe o e-mail:");
+	formulario.setEmail(super.getEntrada().next());
+
+	System.out.println("Informe o Telefone:");
+	formulario.setTelephone(super.getEntrada().next());
+
+	System.out.println("Informe o Nome da Rua:");
+	formulario.setStreetAddress(super.getEntrada().next());
+
+	System.out.println("Informe o N�mero da Casa:");
+	formulario.setNumberAddress(super.getEntrada().next());
+
+	System.out.println("Informe o C�digo Postal");
+	formulario.setZipCode(super.getEntrada().next());
+
+	System.out.println("Informe a Cidade:");
+	formulario.setCity(super.getEntrada().next());
+
+	System.out.println("Informe o Estado:");
+	formulario.setState(super.getEntrada().next());
+
+	System.out.println("Informe o Pa�s:");
+	formulario.setCountry(super.getEntrada().next());
+
+	
 		
 		return formulario;
 	
@@ -135,7 +179,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico>{
 
 	@Override
 	public void exibirDetalhes(Medico completo) {
-		// TODO Auto-generated method stub
+
 		if(completo==null) {
 			System.out.println("N�o � possivel exibir os detalhes, item n�o localizado");
 		}else {

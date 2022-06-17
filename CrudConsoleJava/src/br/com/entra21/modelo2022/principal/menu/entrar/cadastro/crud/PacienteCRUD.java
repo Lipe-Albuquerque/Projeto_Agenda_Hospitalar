@@ -48,7 +48,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 			break;
 
 		default:
-			System.out.println("Opção inválida para o menu de " + super.getTitulo());
+			System.out.println("Opï¿½ï¿½o invï¿½lida para o menu de " + super.getTitulo());
 			break;
 
 		}
@@ -65,12 +65,8 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
 		for (Paciente paciente : lista.values()) {
 
-			System.out.println("\t" + paciente.getName() + " - " + paciente.getPatologia() + " - " + paciente.getAge()
-					+ " - " + paciente.getSex() + " - " + paciente.getCpf() + " - " + paciente.getNameMother() + " - "
-					+ paciente.getNameFather() + " - " + paciente.getEmail() + paciente.getTelephone() + " - "
-					+ paciente.getStreetAddress() + " - " + paciente.getNumberAddress() + paciente.getZipCode() + " - "
-					+ paciente.getCity() + " - " + paciente.getState() + " - " + paciente.getCountry() + " - "
-					+ paciente.getDataCadastro() + " - " + paciente.getDataAtualizada());
+			System.out.println("\t" + paciente.getName() + " - " + paciente.getPatologia()   + " - "
+					+ paciente.getCpf());
 
 		}
 
@@ -98,7 +94,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	public void editar(Paciente chave) {
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("Não existe um registro com CHAVE:" + chave.getCpf());
+			System.out.println("Nï¿½o existe um registro com CHAVE:" + chave.getCpf());
 		} else {
 			lista.put(chave.getCpf(), capturarValores());
 			System.out.println("Dados atualizados");
@@ -111,7 +107,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("Não existe um registro com CHAVE:" + chave.getCpf());
+			System.out.println("Nï¿½o existe um registro com CHAVE:" + chave.getCpf());
 		} else {
 			lista.remove(chave.getCpf());
 			System.out.println("Item excluido");
@@ -123,7 +119,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	public Paciente capturarChave() {
 		Paciente paciente = new Paciente();
 		System.out.println("Informe a CHAVE");
-		paciente.setCpf(super.getEntrada().next()); //.replaceAll("\\p{Punct}", "")
+		paciente.setCpf(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
 		return paciente;
 
 	}
@@ -135,7 +131,9 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 		System.out.println("Informe o Nome:");
 		paciente.setName(super.getEntrada().next());
-
+		
+		System.out.println("Informe a senha");
+		paciente.setSenha(super.getEntrada().next());
 		System.out.println("Informe a Patologia:");
 		paciente.setPatologia(super.getEntrada().next());
 
@@ -145,10 +143,8 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		System.out.println("Informe o Sexo:");
 		paciente.setSex(super.getEntrada().next());
 
-		System.out.println("Informe o Cpf:");
-		paciente.setCpf(super.getEntrada().next());
 
-		System.out.println("Informe o Nome da Mãe:");
+		System.out.println("Informe o Nome da Mï¿½e:");
 		paciente.setNameMother(super.getEntrada().next());
 
 		System.out.println("Informe o Nome do Pai:");
@@ -163,10 +159,10 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		System.out.println("Informe o Nome da Rua:");
 		paciente.setStreetAddress(super.getEntrada().next());
 
-		System.out.println("Informe o Número da Casa:");
+		System.out.println("Informe o Nï¿½mero da Casa:");
 		paciente.setNumberAddress(super.getEntrada().next());
 
-		System.out.println("Informe o Código Postal");
+		System.out.println("Informe o Cï¿½digo Postal");
 		paciente.setZipCode(super.getEntrada().next());
 
 		System.out.println("Informe a Cidade:");
@@ -175,7 +171,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		System.out.println("Informe o Estado:");
 		paciente.setState(super.getEntrada().next());
 
-		System.out.println("Informe o País:");
+		System.out.println("Informe o Paï¿½s:");
 		paciente.setCountry(super.getEntrada().next());
 
 		return paciente;
@@ -185,7 +181,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	@Override
 	public void exibirDetalhes(Paciente completo) {
 		if (completo == null) {
-			System.out.println("Não foi possivel exibir os detalhes, item não localizado");
+			System.out.println("Nï¿½o foi possivel exibir os detalhes, item nï¿½o localizado");
 		} else {
 			System.out.println(completo.toString());
 		}

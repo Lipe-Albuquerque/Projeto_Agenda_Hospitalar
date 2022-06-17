@@ -29,7 +29,7 @@ public class MenuCadastro extends Menu{
 			break;
 			
 		case 3:
-			new AgendaCRUD().executarMenu();
+			//new AgendaCRUD().executarMenu();
 			break;
 
 		default:

@@ -13,16 +13,24 @@ public class Medico extends Pessoa {
 		super();
 	}
 
+	
+
 	public Medico(String name, byte age, String sex, String cpf, String nameMother, String nameFather, String email,
 			String telephone, String streetAddress, String numberAddress, String zipCode, String city, String state,
-			String country, String especialidade, String crm, LocalDate localDate) {
-		super(name, age, sex, cpf, nameMother, nameFather, email, telephone, streetAddress, numberAddress, zipCode,
-				city, state, country);
-		this.especialidade = especialidade;
-		this.crm = crm;
-		this.turno = localDate;
-
+			String country) {
+		super(name, age, sex, cpf, nameMother, nameFather, email, telephone, streetAddress, numberAddress, zipCode, city, state,
+				country);
+	
 	}
+
+
+
+	public Medico(String nome, byte idade, String cpf) {
+		super(nome, idade, cpf);
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public Medico(String especialidade, String crm, LocalDate turno) {
 
@@ -31,6 +39,14 @@ public class Medico extends Pessoa {
 		this.crm = crm;
 		this.turno = turno;
 	}
+
+	public Medico(String string, byte b, String string2, String string3, String string4, String string5, String string6,
+			String string7, String string8, String string9, String string10, String string11, String string12,
+			String string13, String string14, String string15, LocalDate of) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public String getCrm() {
 		return crm;

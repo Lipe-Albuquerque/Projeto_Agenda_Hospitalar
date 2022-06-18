@@ -18,7 +18,7 @@ public class BancoFicticio {
 	public static void gerarBancoDados() {
 		inicializarMedicos();
 		inicializarPacientes();
-		
+
 	}
 
 	private static void inicializarMedicos() {
@@ -37,61 +37,47 @@ public class BancoFicticio {
 		// medico Joa�aba
 		medicos.put("89712348963",
 				new Medico("Diana Prince", (byte) 35, "Feminino", "897.123.489-63", "Hipolita Prince", "Zeus Prince",
-						"diana_prince@gmail.com", " 48 98854-7888", "Av das Pedras", "78", "89600-000", "Joa�aba", "SC",
-						"BR", "Neurologista", "CRM/SC 123489", LocalDate.of(2022, 12, 30)));
+						"diana_prince@gmail.com", " 48 98854-7888", "Av das Pedras", "78", "89600-000", "Joa�aba",
+						"SC", "BR", "Neurologista", "CRM/SC 123489", LocalDate.of(2022, 12, 30)));
 
 	}
 
 	private static void inicializarPacientes() {
 		// pacientes de Imbituba
-		pacientes.put("001", new Paciente("001","123"));
-		
-		
+
 		pacientes.put("897.123.489-63",
-			new Paciente("Steve Rogers", (byte) 29, "Masculino", "897.123.489-63", "Sarah Rogers", "Joseph Rogers",
+				new Paciente("Steve Rogers", (byte) 29, "Masculino", "897.123.489-63", "Sarah Rogers", "Joseph Rogers",
 						"steve.rogers@yahoo.com", "47 98965-5263", "Av das Americas", "407", "88780-000", "Imbituba",
-						"SC", "BR", "123", LocalDate.of(2022, 12, 30),
-						LocalDateTime.now()));
+						"SC", "BR", "dor", LocalDate.of(2022, 12, 30), LocalDateTime.now(), "senha"));
 
 		pacientes.put("023.156.159-62",
 				new Paciente("Peter Parker", (byte) 21, "Masculino", "023.156.159-62", "Mary Parker", "Richard Parker",
 						"peter.parker@gmail.com", " 47 98563-4541", "Rua dos Limoeiros", "569", "88780-000", "Imbituba",
-						"SC", "BR", "Limpeza dent�ria", LocalDate.of(2022, 12, 30),
-						LocalDateTime.now()));
+						"SC", "BR", "Limpeza dentariaria", LocalDate.of(2022, 12, 30), LocalDateTime.now(), "senha"));
 
 		// pacientes de Smallville
 		pacientes.put("12356315985",
-			new Paciente("Anthony Stark", (byte) 58, "Masculino", "123.563.159-85", "Maria Stark", "Howard Stark",
+				new Paciente("Anthony Stark", (byte) 58, "Masculino", "123.563.159-85", "Maria Stark", "Howard Stark",
 						"iron_man@gmail.com", " 48 98845-2274", "Av da F�", "123", "56600-006", "Smallville", "SC",
-					"BR", "Troca de lentes", LocalDate.of(2022, 12, 30), LocalDateTime.now()));
+						"BR", "Troca de lentes", LocalDate.of(2022, 12, 30), LocalDateTime.now(), "senha"));
 
 		pacientes.put("12345678996",
 				new Paciente("Natasha Romanoff", (byte) 32, "Feminino", "123.456.789-96", "Melina Vostokoff",
 						"Alexei Shostakov", "black_widowahoo.com", " 47 99656-8987", "Rua das Flores", "99",
-						"56600-006", "Smallville", "SC", "BR", "Dores fortes de cabe�a",
-						LocalDate.of(2022, 12, 30), LocalDateTime.now()));
+						"56600-006", "Smallville", "SC", "BR", "Dores fortes de cabe�a", LocalDate.of(2022, 12, 30),
+						LocalDateTime.now(), "senha"));
 
 		// pacientes de Joa�aba
 		pacientes.put("02356369896",
 				new Paciente("Thor Odinson", (byte) 33, "Masculino", "023.563.698.96", "Joro", "Odin",
 						"thunder_god@gmail.com", " 47 98874-6323", "Av Mjolnir", "1903", "89600-000", "Joa�aba", "SC",
-						"BR", "Enxaqueca", LocalDate.of(2022, 12, 30), LocalDateTime.now()));
+						"BR", "Enxaqueca", LocalDate.of(2022, 12, 30), LocalDateTime.now(), "senha"));
+
 		pacientes.put("02310255885",
 				new Paciente("Wanda Maximoff", (byte) 28, "Feminino", "023.102.558-85", "Magda Maximoff",
 						"Erik Lehnsherr", "scarlet_witch@gmail.com", "49 98847-1002", "Av Vis�o", "456", "89600-000",
-						"Joa�aba", "SC", "BR", "Exames de rotina", LocalDate.of(2022, 12, 30),
-						LocalDateTime.now()));
-		
-		
-		
-		
-		Paciente admin = new Paciente("Admin", (byte) 32, "001");
-		admin.setSenha("123");
-		pacientes.put("002", admin);
-		
-		Paciente robervaldo = new Paciente("cleber", (byte) 5, "00");
-		robervaldo.setSenha("321");
-		pacientes.put("00", robervaldo);
+						"Joacaba", "SC", "BR", "Exames de rotina", LocalDate.of(2022, 12, 30), LocalDateTime.now(),
+						"senha"));
 
 	}
 }

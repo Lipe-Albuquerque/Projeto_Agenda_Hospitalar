@@ -2,6 +2,8 @@
 
 ## Sobre o projeto:
 
+
+
 A iniciativa é facilitar o agendamento de consultas médicas para o paciente com profissionais de diversas áreas da sáude.
 Teremos dois perfis inicialmente, o Paciente e o Médico (que pode ser qualquer profissional da área da saúde). Para usar o programa, basta realizar o cadastro, informando dados comuns como nome, CPF (para o profissional da saúde, será necessário também o número de CRM, CRE, CRO ou CRP por exemplo ), endereço por exemplo.
 Ambos os perfis poderão fazer cadastro e login na plataforma. Os pacientes poderão procurar qual médico estará disponível no horário que estes necessitam, eles podererão ver seus próprios agendamentos , alterar suas datas e horários, trocar de profissional ou mesmo desmarcar uma consulta. Já o médico, poderá compartilhar agendas e dias disponíveis para atendimento aos pacentes, visualizar seus atendimentos do dia e desmarcar uma consulta pré agendada.

@@ -12,7 +12,7 @@ import br.com.entra21.modelo2022.validador.erro.SenhaIncorretaException;
 
 public class Login {
 
-	static Scanner entrada = new Scanner(System.in);
+	static Scanner input = new Scanner(System.in);
 
 	public static Paciente logado = null;
 
@@ -26,12 +26,12 @@ public class Login {
 		}
 		try {
 			System.out.println("Informe o CPF do funcionario:");
-			Paciente paciente = BancoFicticio.pacientes.get(entrada.next().trim());
+			Paciente paciente = BancoFicticio.pacientes.get(input.next().trim());
 
 			System.out.println("Funcionario encontrado :" + paciente.getName());
 			System.out.println("Informe a senha para liberar o acesso:");
 
-			if (!paciente.getSenha().equals(entrada.next())) {
+			if (!paciente.getSenha().equals(input.next())) {
 				throw new SenhaIncorretaException();
 			} else {
 				verificarSenha(paciente);
@@ -62,7 +62,7 @@ public class Login {
 		}
 		try {
 			System.out.println("Informe o CPF do novo funcionario:");
-			cpf = entrada.next().trim();
+			cpf = input.next().trim();
 			Paciente paciente = BancoFicticio.pacientes.get(cpf);
 
 			if (paciente != null) {
@@ -97,7 +97,7 @@ public class Login {
 		}
 		try {
 			System.out.println("Informe o CPF do paciente:");
-			Paciente paciente = BancoFicticio.pacientes.get(entrada.next().trim());
+			Paciente paciente = BancoFicticio.pacientes.get(input.next().trim());
 
 			System.out.println("Funcionario encontrado :" + paciente.getName());
 			paciente.setSenha(paciente.getDataCadastro().format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
@@ -144,7 +144,7 @@ public class Login {
 
 		System.out.println(
 				"Atualize a sua senha");
-		paciente.setSenha(entrada.next());
+		paciente.setSenha(input.next());
 		verificarSenha(paciente);
 
 	}
@@ -152,9 +152,9 @@ public class Login {
 	public static void exibirInformacoesSobre() {
 		System.out.println("============================== SOBRE ==================================");
 		System.out.println(
-				"A iniciativa é facilitar o agendamento de consultas médicas para o paciente com profissionais de diversas áreas da sáude.\n"
-						+ "Teremos dois perfis inicialmente, o Paciente e o Médico (que pode ser qualquer profissional da área da saúde). Para usar o programa, basta realizar o cadastro, informando dados comuns como nome, CPF (para o profissional da saúde, será necessário também o número de CRM, CRE, CRO ou CRP por exemplo ), endereço por exemplo.\n"
-						+ "Ambos os perfis poderão fazer cadastro e login na plataforma. Os pacientes poderão procurar qual médico estará disponível no horário que estes necessitam, eles podererão ver seus próprios agendamentos , alterar suas datas e horários, trocar de profissional ou mesmo desmarcar uma consulta. Já o médico, poderá compartilhar agendas e dias disponíveis para atendimento aos pacentes, visualizar seus atendimentos do dia e desmarcar uma consulta pré agendada.");
+				"A iniciativa ï¿½ facilitar o agendamento de consultas mï¿½dicas para o paciente com profissionais de diversas ï¿½reas da sï¿½ude.\n"
+						+ "Teremos dois perfis inicialmente, o Paciente e o Mï¿½dico (que pode ser qualquer profissional da ï¿½rea da saï¿½de). Para usar o programa, basta realizar o cadastro, informando dados comuns como nome, CPF (para o profissional da saï¿½de, serï¿½ necessï¿½rio tambï¿½m o nï¿½mero de CRM, CRE, CRO ou CRP por exemplo ), endereï¿½o por exemplo.\n"
+						+ "Ambos os perfis poderï¿½o fazer cadastro e login na plataforma. Os pacientes poderï¿½o procurar qual mï¿½dico estarï¿½ disponï¿½vel no horï¿½rio que estes necessitam, eles podererï¿½o ver seus prï¿½prios agendamentos , alterar suas datas e horï¿½rios, trocar de profissional ou mesmo desmarcar uma consulta. Jï¿½ o mï¿½dico, poderï¿½ compartilhar agendas e dias disponï¿½veis para atendimento aos pacentes, visualizar seus atendimentos do dia e desmarcar uma consulta prï¿½ agendada.");
 		System.out.println("=======================================================================");
 
 	}

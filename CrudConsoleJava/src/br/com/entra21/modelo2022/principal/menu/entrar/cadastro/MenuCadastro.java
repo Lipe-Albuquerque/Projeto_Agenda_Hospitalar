@@ -15,7 +15,7 @@ public class MenuCadastro extends Menu{
 		super(titulo, opcoes);
 		
 	}
-	
+	@Override
 	public byte capturarOpcao() {
 		byte opcao = super.capturarOpcao();
 

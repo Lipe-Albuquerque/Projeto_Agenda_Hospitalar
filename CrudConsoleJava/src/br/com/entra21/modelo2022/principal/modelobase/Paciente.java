@@ -5,17 +5,17 @@ import java.time.LocalDateTime;
 
 public class Paciente extends Pessoa {
 
-	private String patologia;
+	private String patology;
 	private LocalDate dataCadastro;
 	private LocalDateTime dataAtualizada;
-	private String senha;
+	private String password;
 
 	public String getPatologia() {
-		return patologia;
+		return patology;
 	}
 
 	public void setPatologia(String patologia) {
-		this.patologia = patologia;
+		this.patology = patologia;
 	}
 
 	public LocalDate getDataCadastro() {
@@ -35,11 +35,11 @@ public class Paciente extends Pessoa {
 	}
 
 	public String getSenha() {
-		return senha;
+		return password;
 	}
 
 	public void setSenha(String senha) {
-		this.senha = senha;
+		this.password = senha;
 	}
 
 	public Paciente() {
@@ -47,10 +47,10 @@ public class Paciente extends Pessoa {
 
 	public Paciente(String patologia, LocalDate dataCadastro, LocalDateTime dataAtualizada, String senha) {
 		super();
-		this.patologia = patologia;
+		this.patology = patologia;
 		this.dataCadastro = dataCadastro;
 		this.dataAtualizada = dataAtualizada;
-		this.senha = senha;
+		this.password = senha;
 	}
 
 	public Paciente(String name, byte age, String sex, String cpf, String nameMother, String nameFather, String email,
@@ -58,10 +58,10 @@ public class Paciente extends Pessoa {
 			String country, String patologia, LocalDate dataCadastro, LocalDateTime dataAtualizada, String senha) {
 		super(name, age, sex, cpf, nameMother, nameFather, email, telephone, streetAddress, numberAddress, zipCode,
 				city, state, country);
-		this.patologia = patologia;
+		this.patology = patologia;
 		this.dataCadastro = dataCadastro;
 		this.dataAtualizada = dataAtualizada;
-		this.senha = senha;
+		this.password = senha;
 	}
 
 	public String toString() {

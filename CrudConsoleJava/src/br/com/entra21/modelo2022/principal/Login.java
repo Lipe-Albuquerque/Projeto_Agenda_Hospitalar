@@ -18,7 +18,7 @@ public class Login {
 
 	public static void entrar(byte tentativa) {
 		if (tentativa == 0) {
-			System.out.println("Nï¿½o foi possivel realizar o login, todas as tentativas falharam");
+			System.out.println("Nao foi possivel realizar o login, todas as tentativas falharam");
 			return;
 		} else {
 			System.out.println((tentativa > 1 ? "Restam " : "Resta ") + tentativa
@@ -49,13 +49,12 @@ public class Login {
 
 	}
 
-	
 	public static void cadastrar(byte tentativa) {
 
 		String cpf;
 
 		if (tentativa == 0) {
-			System.out.println("Nï¿½o foi possivel realizar o cadastro, todas as tentativas falharam");
+			System.out.println("Nao foi possivel realizar o cadastro, todas as tentativas falharam");
 			return;
 		} else {
 			System.out.println((tentativa > 1 ? "Restam " : "Resta ") + tentativa
@@ -73,8 +72,9 @@ public class Login {
 				paciente.setCpf(cpf);
 				paciente.setSenha(cpf);
 				BancoFicticio.pacientes.put(cpf, paciente);
-				System.out.println("Funcionï¿½rio cadastrado, por favor realize o login:");
-				System.out.println("IMPORTANTE: No primeiro acesso a senha ï¿½ igual ao CPF e serï¿½ solicitado a mudanï¿½a");
+				System.out.println("Funcionariorio cadastrado, por favor realize o login:");
+				System.out.println(
+						"IMPORTANTE: No primeiro acesso a senha e igual ao CPF e sera solicitado a mudanca");
 				return;
 			}
 
@@ -86,18 +86,17 @@ public class Login {
 
 	}
 
-
 	public static void recuperarSenha(byte tentativa) {
 
 		if (tentativa == 0) {
-			System.out.println("Nï¿½o foi possivel realizar a recuperaï¿½ï¿½o de senha, todas as tentativas falharam");
+			System.out.println("Nao foi possivel realizar a recuperacao de senha, todas as tentativas falharam");
 			return;
 		} else {
 			System.out.println((tentativa > 1 ? "Restam " : "Resta ") + tentativa
 					+ (tentativa > 1 ? " tentativas" : " tentativa") + " de recuperaï¿½ï¿½o de senha:");
 		}
 		try {
-			System.out.println("Informe o CPF do funcionario:");
+			System.out.println("Informe o CPF do paciente:");
 			Paciente paciente = BancoFicticio.pacientes.get(entrada.next().trim());
 
 			System.out.println("Funcionario encontrado :" + paciente.getName());
@@ -105,7 +104,7 @@ public class Login {
 			BancoFicticio.pacientes.put(paciente.getCpf(), paciente);
 			System.out.println("A senha foi atualizada com a data do admissï¿½o no formato DD/MM/YYYY:");
 
-			System.out.println("Funcionï¿½rio atualizado, por favor realize o login:");
+			System.out.println("Paciente atualizado, por favor realize o login:");
 
 		} catch (NullPointerException e) {
 			System.out.println("Nenhum funcionario encontrado com esse CPF");
@@ -118,13 +117,12 @@ public class Login {
 
 		if (paciente.getSenha().equals(paciente.getCpf()) || paciente.getSenha()
 				.equals(paciente.getDataCadastro().format(DateTimeFormatter.ofPattern("dd/MM/YYYY")))) {
-			atualizarSenha(paciente);	
+			atualizarSenha(paciente);
 			BancoFicticio.pacientes.size();
 		} else {
 			definirPacienteoLogado(paciente);
 
-			new MenuPrincipal("PRINCIPAL", new ArrayList<String>(Arrays.asList("Crud","Agendar")))
-					.executarMenu();
+			new MenuPrincipal("PRINCIPAL", new ArrayList<String>(Arrays.asList("Crud", "Agendar"))).executarMenu();
 
 			definirPacienteoLogado(null);
 		}
@@ -136,7 +134,7 @@ public class Login {
 		if (paciente != null) {
 			System.out.println("Bem vindo, " + paciente.getName());
 		} else {
-			System.out.println("Atï¿½ a proxima " + paciente.getName() + ", volte sempre que precisar.");
+			System.out.println("Ate a proxima " + paciente.getName() + ", volte sempre que precisar.");
 		}
 		logado = paciente;
 
@@ -145,7 +143,7 @@ public class Login {
 	private static void atualizarSenha(Paciente paciente) {
 
 		System.out.println(
-				"Atualize a sua senha, pois nï¿½o ï¿½ seguro manter a senha igual ao cpf ou com a data de admissï¿½o:");
+				"Atualize a sua senha");
 		paciente.setSenha(entrada.next());
 		verificarSenha(paciente);
 
@@ -153,22 +151,10 @@ public class Login {
 
 	public static void exibirInformacoesSobre() {
 		System.out.println("============================== SOBRE ==================================");
-		System.out.println("Projeto desenvolvido pela EU-quipe Oliota");
-		System.out.println("Objetivo");
 		System.out.println(
-				"\tServir de modelo para construï¿½ï¿½o dos projetos em grupo para os alunos do entra21-2022 (Melhor turma de java)");
-		System.out.println(
-				"\tEm cada etapa o projeto serï¿½ atualizado e salvo em branches diferentes para manter o historico de evoluï¿½ï¿½o");
-		System.out.println("");
-		System.out.println("Escopo");
-		System.out.println(
-				"\tProjeto para cadastro, relatï¿½rios e regras de negocios envolvendo o assunto GESTOR DE CURSOS");
-		System.out.println(
-				"\tO catalogo de cursos ï¿½ oferecido pela instituiï¿½ï¿½o e os clientes optam por adquirir os cursos");
-		System.out.println("\tCada curso tem seus detalhes como , data de inicio, carga horaria e valor");
-		System.out.println("");
-		System.out.println("Versï¿½es");
-		System.out.println("\tV1.0 - Cadastros,relatï¿½rios, 1 regra de negï¿½cio");
+				"A iniciativa é facilitar o agendamento de consultas médicas para o paciente com profissionais de diversas áreas da sáude.\n"
+						+ "Teremos dois perfis inicialmente, o Paciente e o Médico (que pode ser qualquer profissional da área da saúde). Para usar o programa, basta realizar o cadastro, informando dados comuns como nome, CPF (para o profissional da saúde, será necessário também o número de CRM, CRE, CRO ou CRP por exemplo ), endereço por exemplo.\n"
+						+ "Ambos os perfis poderão fazer cadastro e login na plataforma. Os pacientes poderão procurar qual médico estará disponível no horário que estes necessitam, eles podererão ver seus próprios agendamentos , alterar suas datas e horários, trocar de profissional ou mesmo desmarcar uma consulta. Já o médico, poderá compartilhar agendas e dias disponíveis para atendimento aos pacentes, visualizar seus atendimentos do dia e desmarcar uma consulta pré agendada.");
 		System.out.println("=======================================================================");
 
 	}

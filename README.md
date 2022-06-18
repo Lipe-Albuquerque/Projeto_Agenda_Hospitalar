@@ -23,7 +23,7 @@ A equipe é composta por 3 integrantes, sendo eles:
      <td align="center"> <!-- Ariana -->
       <a href="https://github.com/ariana-ssilva">
         <img src=./gif_img/ariana_silva.png
-     alt="Ariana Silva" width="200px;" height="200px"/>
+     alt="Ariana Silva" width="250px;" height="250px"/>
       </a>
       <br />
       <a href="https://github.com/ariana-ssilva">Ariana Silva</a>
@@ -31,7 +31,7 @@ A equipe é composta por 3 integrantes, sendo eles:
     <td align="center">  <!-- Filipe -->
       <a href="https://github.com/Lipe-Albuquerque">
         <img src=./gif_img/filipe_albuquerque.jpg
-     alt="Filipe Albuquerque" width="200px;" height="200px"/>
+     alt="Filipe Albuquerque" width="200px;" height="250px"/>
       </a>
       <br />
       <a href="https://github.com/Lipe-Albuquerque">Filipe Albuquerque</a>
@@ -39,7 +39,7 @@ A equipe é composta por 3 integrantes, sendo eles:
     <td align="center">   <!-- Thiago -->
       <a href="https://github.com/wzthiago">
         <img src=./gif_img/thiago_souza.png
-     alt="JThiago de Souza" width="200px;" height="200px"/>
+     alt="JThiago de Souza" width="250px;" height="250px"/>
       <br />
       <a href="https://github.com/mashirozx">Thiago de Souza</a>
     </td>                 <!-- Thiago -->

@@ -1,5 +1,7 @@
 package br.com.entra21.modelo2022.principal;
 
+import java.sql.Date;
+import java.text.Format;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -7,6 +9,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import br.com.entra21.modelo2022.principal.modelobase.Agenda;
 import br.com.entra21.modelo2022.principal.modelobase.Medico;
 import br.com.entra21.modelo2022.principal.modelobase.Paciente;
 
@@ -14,11 +17,46 @@ public class BancoFicticio {
 
 	public static HashMap<String, Paciente> pacientes = new HashMap<>();
 
+	public static HashMap<String, Agenda> agendas = new HashMap<>();
+
 	public static HashMap<String, Medico> medicos = new HashMap<>();
 
 	public static void gerarBancoDados() {
 		inicializarMedicos();
 		inicializarPacientes();
+		inicializrAgenda();
+
+	}
+
+	private static void inicializrAgenda() {
+
+		Agenda teste1 = new Agenda();
+		teste1.setId("1");
+		teste1.setMedico(medicos.get("91614967075"));
+		teste1.setPaciente(pacientes.get("897.123.489-63"));
+		teste1.setDataAgendamento(LocalDate.of(2022, 02, 20).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
+		agendas.put("1", teste1);
+
+		Agenda teste2 = new Agenda();
+		teste2.setId("2");
+		teste2.setMedico(medicos.get("02323689645"));
+		teste2.setPaciente(pacientes.get("02356369896"));
+		teste2.setDataAgendamento(LocalDate.of(2022, 10, 15).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
+		agendas.put("2", teste2);
+
+		Agenda teste3 = new Agenda();
+		teste3.setId("3");
+		teste3.setMedico(medicos.get("12356315985"));
+		teste3.setPaciente(pacientes.get("02310255885"));
+		teste3.setDataAgendamento(LocalDate.of(2022, 05, 20).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
+		agendas.put("3", teste3);
+
+		Agenda teste4 = new Agenda();
+		teste4.setId("4");
+		teste4.setMedico(medicos.get("89712348963"));
+		teste4.setPaciente(pacientes.get("12345678996"));
+		teste4.setDataAgendamento(LocalDate.of(2022, 11, 05).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
+		agendas.put("4", teste4);
 
 	}
 

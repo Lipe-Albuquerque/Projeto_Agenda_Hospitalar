@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Agenda {
 	
-	private String id;
+	private int id;
 	private Paciente paciente;
 	private Medico medico;
 	private String DataAgendamento;
@@ -15,7 +15,7 @@ public class Agenda {
 		super();
 	}
 
-	public Agenda(String id, Paciente paciente, Medico medico, String dataAgendamento, String dataCancelamento) {
+	public Agenda(int id, Paciente paciente, Medico medico, String dataAgendamento, String dataCancelamento) {
 		super();
 		this.id = id;
 		this.paciente = paciente;
@@ -24,11 +24,11 @@ public class Agenda {
 		DataCancelamento = dataCancelamento;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -65,7 +65,7 @@ public class Agenda {
 	}
 	
 	public String toString() {
-		return "Médico: " + getMedico().getName() + "\n ID Agendamento: " + getId();
+		return "Mï¿½dico: " + getMedico().getName() + "\n ID Agendamento: " + getId();
 	}
 	
 }

@@ -31,32 +31,32 @@ public class BancoFicticio {
 	private static void inicializrAgenda() {
 
 		Agenda teste1 = new Agenda();
-		teste1.setId("1");
+		teste1.setId(1);
 		teste1.setMedico(medicos.get("91614967075"));
 		teste1.setPaciente(pacientes.get("897.123.489-63"));
 		teste1.setDataAgendamento(LocalDate.of(2022, 02, 20).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
-		agendas.put("1", teste1);
+		agendas.put(String.valueOf(teste1.getId()), teste1);
 
 		Agenda teste2 = new Agenda();
-		teste2.setId("2");
+		teste2.setId(2);
 		teste2.setMedico(medicos.get("02323689645"));
-		teste2.setPaciente(pacientes.get("02356369896"));
+		teste2.setPaciente(pacientes.get("023.156.159-62"));
 		teste2.setDataAgendamento(LocalDate.of(2022, 10, 15).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
-		agendas.put("2", teste2);
+		agendas.put(String.valueOf(teste2.getId()), teste2);
 
 		Agenda teste3 = new Agenda();
-		teste3.setId("3");
+		teste3.setId(3);
 		teste3.setMedico(medicos.get("12356315985"));
 		teste3.setPaciente(pacientes.get("02310255885"));
 		teste3.setDataAgendamento(LocalDate.of(2022, 05, 20).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
-		agendas.put("3", teste3);
+		agendas.put(String.valueOf(teste3.getId()), teste3);
 
 		Agenda teste4 = new Agenda();
-		teste4.setId("4");
+		teste4.setId(4);
 		teste4.setMedico(medicos.get("89712348963"));
 		teste4.setPaciente(pacientes.get("12345678996"));
 		teste4.setDataAgendamento(LocalDate.of(2022, 11, 05).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
-		agendas.put("4", teste4);
+		agendas.put(String.valueOf(teste4.getId()), teste4);
 
 	}
 

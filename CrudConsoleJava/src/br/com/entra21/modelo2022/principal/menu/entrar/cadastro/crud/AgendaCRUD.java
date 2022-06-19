@@ -10,7 +10,7 @@ import br.com.entra21.modelo2022.principal.modelobase.Medico;
 import br.com.entra21.modelo2022.principal.modelobase.Paciente;
 
 public class AgendaCRUD extends Menu implements ICrud<Agenda> {
-
+	private HashMap<String, Paciente> listaPaciente = BancoFicticio.pacientes;
 	private HashMap<String, Medico> listaMedico = BancoFicticio.medicos;
 	private HashMap<String, Agenda> lista = BancoFicticio.agendas;
 
@@ -73,9 +73,9 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	public void adicionar() {
 		Agenda agenda = capturarValores();
 		if (buscar(agenda) == null) {
-			lista.put(agenda.getId(), agenda);
+			lista.put(String.valueOf(agenda.getId()), agenda);
 		} else {
-			System.out.println("Já existe um registro com essa CHAVE: " + agenda.getId());
+			System.out.println("Jï¿½ existe um registro com essa CHAVE: " + agenda.getId());
 		}
 	}
 
@@ -88,9 +88,9 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	public void editar(Agenda chave) {
 		Agenda agendaAtual = buscar(chave);
 		if (agendaAtual == null) {
-			System.out.println("Não existe um registro com essa CHAVE: " + agendaAtual.getId());
+			System.out.println("Nï¿½o existe um registro com essa CHAVE: " + agendaAtual.getId());
 		} else {
-			lista.put(chave.getId(), capturarValores());
+			lista.put(String.valueOf(chave.getId()), capturarValores());
 			System.out.println("Dados Atualizados");
 		}
 	}
@@ -99,7 +99,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	public void deletar(Agenda chave) {
 		Agenda agendaAtual = buscar(chave);
 		if (agendaAtual == null) {
-			System.out.println("Não existe um registro com essa CHAVE: " + agendaAtual.getId());
+			System.out.println("Nï¿½o existe um registro com essa CHAVE: " + agendaAtual.getId());
 		} else {
 			lista.remove(chave.getId());
 			System.out.println("Item excluido");
@@ -110,7 +110,15 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	public Agenda capturarChave() {
 		Agenda agenda = new Agenda();
 		System.out.println("Informe a CHAVE: ");
-		agenda.setId(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
+		agenda.setId(super.getEntrada().nextInt());
+
+		return agenda;
+	}
+
+	public Medico capturarChaveMedico() {
+		Medico agenda = new Medico();
+		System.out.println("Informe o cpf: ");
+		agenda.setCpf(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
 
 		return agenda;
 	}
@@ -120,32 +128,47 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 
 		Agenda agenda = new Agenda();
 
-		System.out.println("Informe o ID: ");
-		agenda.setId(super.getEntrada().next());
 
-		System.out.println("Informe o Médico : ");
-		System.out.println(listaMedico.size());
-		for (Medico medico : listaMedico.values()) {
-			System.out.println("  " + medico.getName());
+		if (agenda.getId() < lista.size()) {
+			agenda.setId(lista.size() + 1);
+		} else {
 
 		}
-		// System.out.println("Informe a data do Agendamento: ");
-		// agenda.set(super.getEntrada().next());
+		listarMedico(listaMedico);
+		
+		agenda.setMedico(buscarMedico(capturarChaveMedico()));
+		
+		System.out.println("Informe a data do Agendamento: ");
+		agenda.setDataAgendamento(super.getEntrada().next());
 
 		return agenda;
 	}
 
-
-	
 	@Override
 	public void exibirDetalhes(Agenda completo) {
 
 		if (completo == null) {
-			System.out.println("Não é possível exibir os detalhes, item não localizado");
+			System.out.println("Nï¿½o ï¿½ possï¿½vel exibir os detalhes, item nï¿½o localizado");
 		} else {
 			System.out.println(completo.toString());
 		}
 
+	}
+
+	public void listarMedico(HashMap<String, Medico> listaMedico) {
+		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
+		for (Medico medico : listaMedico.values()) {
+
+			System.out.println("\t" + medico.getCpf() + " - " + medico.getName() + " - " + medico.getEspecialidade());
+
+		}
+
+		System.out.println("------------- QUANTIDADE (" + listaMedico.size() + ") --------------");
+
+	}
+
+	public Medico buscarMedico(Medico chave) {
+		return listaMedico.get(chave.getCpf());
 	}
 
 }

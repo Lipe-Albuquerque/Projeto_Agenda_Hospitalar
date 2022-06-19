@@ -20,7 +20,7 @@ public class MenuPrincipal extends Menu {
 		switch (opcao) {
 		case 1: 
 
-			new MenuCadastro("CADASTROS", new ArrayList<String>(Arrays.asList("Medico", "Paciente"))).executarMenu(); 
+			new MenuCadastro("CADASTROS", new ArrayList<String>(Arrays.asList("Medico", "Paciente", "Agendar"))).executarMenu(); 
 			break;
 		case 2:
 		//	new Menu

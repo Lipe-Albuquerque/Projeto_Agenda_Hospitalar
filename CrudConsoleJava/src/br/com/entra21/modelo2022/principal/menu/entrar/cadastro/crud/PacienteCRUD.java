@@ -76,7 +76,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	public void adicionar() {
 		Paciente novo = capturarValores();
 		if (buscar(novo) == null) {
-			lista.put(novo.getName(), novo);
+			lista.put(novo.getCpf(), novo);
 		} else {
 			System.out.println("J� existe um registro com CHAVE:" + novo.getName());
 
@@ -85,7 +85,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 	@Override
 	public Paciente buscar(Paciente chave) {
-		return lista.get(chave.getName());
+		return lista.get(chave.getCpf());
 
 	}
 

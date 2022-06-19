@@ -59,17 +59,102 @@ O projeto foi desenvolvido com apoio de nosso tutor [Rubem Oliota](https://githu
 
 ## Diagrama de Classe
 <br> 
-
 <center>
-
 <img src=./gif_img/diagrama_de_classe_atualizado.png
      alt="Diagrama de Classe" width= 100% height=100%>
      
 </center>
+<br>
 
+## Fluxograma
+<br> 
+<center>
+<img src=./gif_img/diagrama_de_classe_atualizado.png
+     alt="Diagrama de Classe" width= 100% height=100%>
+     
+</center>
+<br>
 
+## Tecnologias usadas
+A Agenda Hospitalar foi baseada em Java e sua documentação foi desenvolvida usando Markdown.
 
+<br>
 
+## Conceitos implementados
+<details>	
+  <summary><b> ⏰ Metodologias Ágeis ⏰</b></summary>
+
+- Kanban;
+- Scrum.
+- [Trello](https://trello.com/b/a1IzDCeH/orange-team)
+
+</details>
+
+<details>	
+  <summary><b> 🕵🏻‍♀️ GIT 🕵🏻‍♂️</b></summary>
+
+- Criação de repositório;
+- Documentação.
+
+</details>
+
+<details>	
+  <summary><b> 💡 Lógica 💡 </b></summary>
+
+- Algoritmos;
+- Fluxograma;
+- Variáveis e constantes;
+- Tipos de dados;
+- Comentários;
+- Operadores aritméticos (+ , - , * , / e %);
+- Operadores de incremento e decremento (++ e --);
+- Operadores de igualdade (== e !=);
+- Operadores relacionais (< , <= , > , >=);
+- Operadores lógicos (&& e ||);
+- Condicionais (if, else, else if e operador ternário);
+- Condicionais (Switch case);
+- Funções de procedimento;
+- Funções com parâmetros;
+- Funções com retornos;
+- Funções com parâmetros  e retornos;
+- Funções recursivas;
+- Laços de repetição (for);
+- Laços de repetição (while e do-while);
+- Vetores;
+- Matrizes.
+
+</details>
+
+<details>	
+  <summary><b> 🪆 Programação Orientada à Objetos 🪆</b></summary>
+
+- Abstração;
+- Classes e objetos;
+- Packages e sub-packages;
+- Entidades;
+- Interfaces;
+- Encapsulamento;
+- Utilização estática;
+- Herança;
+- Polimorfismo.
+
+</details>
+
+<details>	
+  <summary><b> 🏆 Java Avançado 🏆</b></summary>
+
+- Classes wrapper;
+- ENUM;
+- ArrayList e LinkedList;
+- HashMap e HashSet;
+- Funções Lambda;
+- Annotations;
+- Generics;
+- Datas;
+- Exceções;
+- Tratamento de erros;
+
+</details>
 
 
 

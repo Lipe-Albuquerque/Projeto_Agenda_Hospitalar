@@ -65,8 +65,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
 		for (Paciente paciente : lista.values()) {
 
-			System.out.println("\t" + paciente.getName() + " - " + paciente.getPatologia()   + " - "
-					+ paciente.getCpf());
+			System.out.println("\t" + paciente.getName() + " - " + paciente.getPatologia() + " - " + paciente.getCpf());
 
 		}
 
@@ -131,7 +130,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 		System.out.println("Informe o Nome:");
 		paciente.setName(super.getEntrada().next());
-		
+
 		System.out.println("Informe a senha");
 		paciente.setSenha(super.getEntrada().next());
 		System.out.println("Informe a Patologia:");
@@ -142,7 +141,6 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 		System.out.println("Informe o Sexo:");
 		paciente.setSex(super.getEntrada().next());
-
 
 		System.out.println("Informe o Nome da M�e:");
 		paciente.setNameMother(super.getEntrada().next());

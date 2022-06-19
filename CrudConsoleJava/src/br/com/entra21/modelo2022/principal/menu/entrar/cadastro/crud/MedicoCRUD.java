@@ -56,7 +56,9 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 	public void listar(HashMap<String, Medico> lista) {
 		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
 		for (Medico medico : lista.values()) {
-			System.out.println("\t" + medico.getCpf() + " - " + medico.getAge() + " - " + medico.getName());
+
+			System.out.println("\t" + medico.getName() + " - " + medico.getEspecialidade() + " - " + medico.getCrm());
+
 		}
 
 		System.out.println("------------- QUANTIDADE (" + lista.size() + ") --------------");
@@ -66,9 +68,9 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 	@Override
 	public void adicionar() {
 
-		Medico novo = capturarValores();
+		Medico novo = capturarValoresAdd();
 		if (buscar(novo) == null) {
-			lista.put(novo.getName(), novo);
+			lista.put(novo.getCpf(), novo);
 		} else {
 			System.out.println("J� existe um registro com CHAVE:" + novo.getName());
 		}
@@ -88,7 +90,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		if (medicoAtual == null) {
 			System.out.println("N�o existe um registro com CHAVE:" + chave.getName());
 		} else {
-			lista.put(chave.getName(), capturarValores());
+			lista.put(chave.getCpf(), capturarValores());
 			System.out.println("Dados atualizados");
 		}
 	}
@@ -100,7 +102,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		if (medicoAtual == null) {
 			System.out.println("N�o existe um registro com CHAVE:" + chave.getName());
 		} else {
-			lista.remove(chave.getName());
+			lista.remove(chave.getCpf());
 			System.out.println("Item excluido");
 		}
 
@@ -111,7 +113,30 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 
 		Medico formulario = new Medico();
 		System.out.println("Informe a CHAVE");
-		formulario.setName(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
+		formulario.setCpf(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
+		return formulario;
+
+	}
+
+	public Medico capturarValoresAdd() {
+
+		Medico formulario = new Medico();
+
+		System.out.println("Informe o Nome:");
+		formulario.setName(super.getEntrada().next());
+
+		System.out.println("Informe a Crm:");
+		formulario.setCrm(super.getEntrada().next());
+
+		System.out.println("Informe o Idade:");
+		formulario.setAge(super.getEntrada().nextByte());
+
+		System.out.println("Informe o Sexo:");
+		formulario.setSex(super.getEntrada().next());
+
+		System.out.println("Informe o Cpf:");
+		formulario.setCpf(super.getEntrada().next());
+
 		return formulario;
 
 	}
@@ -119,7 +144,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 	@Override
 	public Medico capturarValores() {
 
-		Medico formulario = new Medico();
+		Medico formulario = buscar(capturarChave());
 
 		System.out.println("Informe o Nome:");
 		formulario.setName(super.getEntrada().next());

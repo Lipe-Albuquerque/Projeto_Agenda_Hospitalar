@@ -117,7 +117,7 @@ public class Login {
 
 		definirAdminoLogado(admin);
 
-		new MenuPrincipal("PRINCIPAL", new ArrayList<String>(Arrays.asList("Crud", "Agendar"))).executarMenu();
+		new MenuPrincipal("PRINCIPAL", new ArrayList<String>(Arrays.asList("Crud"))).executarMenuPrincipal();
 
 		definirAdminoLogado(null);
 	}

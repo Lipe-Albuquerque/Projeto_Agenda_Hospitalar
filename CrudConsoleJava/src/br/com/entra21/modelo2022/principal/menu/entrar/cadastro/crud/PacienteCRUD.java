@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 import br.com.entra21.modelo2022.principal.BancoFicticio;
 import br.com.entra21.modelo2022.principal.Menu;
@@ -74,7 +75,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 	@Override
 	public void adicionar() {
-		Paciente novo = capturarValores();
+		Paciente novo = capturarValoresAdd();
 		if (buscar(novo) == null) {
 			lista.put(novo.getCpf(), novo);
 		} else {
@@ -123,56 +124,121 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 	}
 
+	public Paciente capturarValoresAdd() {
+
+		Paciente formulario = new Paciente();
+
+		System.out.println("Informe o Nome:");
+		formulario.setName(super.getEntrada().next());
+
+		System.out.println("Informe o Idade:");
+		formulario.setAge(super.getEntrada().nextByte());
+
+		System.out.println("Informe o Sexo:");
+		formulario.setSex(super.getEntrada().next());
+
+		System.out.println("Informe o Cpf:");
+		formulario.setCpf(super.getEntrada().next());
+
+		return formulario;
+
+	}
+
 	@Override
 	public Paciente capturarValores() {
 
-		Paciente paciente = new Paciente();
+		Scanner input = new Scanner(System.in);
+		Paciente formulario = buscar(capturarChave());
+		byte option;
 
-		System.out.println("Informe o Nome:");
-		paciente.setName(super.getEntrada().next());
+		do {
+			System.out.println("Escolha qual inforção deseja alterar: ");
+			System.out.println("0-Retornar");
+			System.out.println("1-Nome");
+			System.out.println("2-Idade");
+			System.out.println("3-Sexo");
+			System.out.println("4-Cpf");
+			System.out.println("5-Nome da mãe");
+			System.out.println("6-Nome do pai");
+			System.out.println("7-e-mail");
+			System.out.println("8-Telefone");
+			System.out.println("9-Nome da rua");
+			System.out.println("10-Numero da casa");
+			System.out.println("11-Codigo Postal");
+			System.out.println("12-Cidade");
+			System.out.println("13-Estado");
+			System.out.println("14-Pais");
+			option = input.nextByte();
 
-		System.out.println("Informe a senha");
-		paciente.setSenha(super.getEntrada().next());
-		System.out.println("Informe a Patologia:");
-		paciente.setPatologia(super.getEntrada().next());
+			switch (option) {
+			case 0:
+				break;
 
-		System.out.println("Informe o Idade:");
-		paciente.setAge(super.getEntrada().nextByte());
+			case 1:
+				System.out.println("Informe o novo Nome:");
+				formulario.setName(super.getEntrada().next());
+				break;
 
-		System.out.println("Informe o Sexo:");
-		paciente.setSex(super.getEntrada().next());
+			case 2:
+				System.out.println("Informe o Idade:");
+				formulario.setAge(super.getEntrada().nextByte());
+				break;
+			case 3:
+				System.out.println("Informe o Sexo:");
+				formulario.setSex(super.getEntrada().next());
+				break;
+			case 4:
+				System.out.println("Informe o Cpf:");
+				formulario.setCpf(super.getEntrada().next());
+				break;
+			case 5:
+				System.out.println("Informe o Nome da M�e:");
+				formulario.setNameMother(super.getEntrada().next());
+				break;
+			case 6:
+				System.out.println("Informe o Nome do Pai:");
+				formulario.setNameFather(super.getEntrada().next());
+				break;
+			case 7:
+				System.out.println("Informe o e-mail:");
+				formulario.setEmail(super.getEntrada().next());
+				break;
+			case 8:
+				System.out.println("Informe o Telefone:");
+				formulario.setTelephone(super.getEntrada().next());
+				break;
+			case 9:
+				System.out.println("Informe o Nome da Rua:");
+				formulario.setStreetAddress(super.getEntrada().next());
+				break;
+			case 10:
+				System.out.println("Informe o N�mero da Casa:");
+				formulario.setNumberAddress(super.getEntrada().next());
+				break;
+			case 11:
+				System.out.println("Informe o C�digo Postal");
+				formulario.setZipCode(super.getEntrada().next());
+				break;
+			case 12:
+				System.out.println("Informe a Cidade:");
+				formulario.setCity(super.getEntrada().next());
+				break;
+			case 13:
+				System.out.println("Informe o Estado:");
+				formulario.setState(super.getEntrada().next());
+				break;
+			case 14:
+				System.out.println("Informe o Pa�s:");
+				formulario.setCountry(super.getEntrada().next());
 
-		System.out.println("Informe o Nome da M�e:");
-		paciente.setNameMother(super.getEntrada().next());
+				break;
 
-		System.out.println("Informe o Nome do Pai:");
-		paciente.setNameFather(super.getEntrada().next());
-
-		System.out.println("Informe o e-mail:");
-		paciente.setEmail(super.getEntrada().next());
-
-		System.out.println("Informe o Telefone:");
-		paciente.setTelephone(super.getEntrada().next());
-
-		System.out.println("Informe o Nome da Rua:");
-		paciente.setStreetAddress(super.getEntrada().next());
-
-		System.out.println("Informe o N�mero da Casa:");
-		paciente.setNumberAddress(super.getEntrada().next());
-
-		System.out.println("Informe o C�digo Postal");
-		paciente.setZipCode(super.getEntrada().next());
-
-		System.out.println("Informe a Cidade:");
-		paciente.setCity(super.getEntrada().next());
-
-		System.out.println("Informe o Estado:");
-		paciente.setState(super.getEntrada().next());
-
-		System.out.println("Informe o Pa�s:");
-		paciente.setCountry(super.getEntrada().next());
-
-		return paciente;
+			default:
+				System.out.println("Digite uma opção valida!");
+				break;
+			}
+		} while (option != 0);
+		return formulario;
 
 	}
 

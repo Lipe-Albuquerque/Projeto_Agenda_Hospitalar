@@ -18,6 +18,10 @@ public class MenuPrincipal extends Menu {
 
 		byte opcao = super.capturarOpcao();
 		switch (opcao) {
+		case 0:
+			System.exit(opcao);
+			break;
+		
 		case 1: 
 
 			new MenuCadastro("CADASTROS", new ArrayList<String>(Arrays.asList("Medico", "Paciente", "Agendar"))).executarMenu(); 

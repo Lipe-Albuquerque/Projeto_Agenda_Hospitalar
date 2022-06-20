@@ -9,6 +9,33 @@ public class Paciente extends Pessoa {
 	private LocalDate dataCadastro;
 	private LocalDateTime dataAtualizada;
 	private String password;
+	
+	public Paciente() {
+	}
+
+	public Paciente(String patologia, LocalDate dataCadastro, LocalDateTime dataAtualizada, String senha) {
+		super();
+		this.patology = patologia;
+		this.dataCadastro = dataCadastro;
+		this.dataAtualizada = dataAtualizada;
+		this.password = senha;
+	}
+
+	public Paciente(String name, byte age, String sex, String cpf, String nameMother, String nameFather, String email,
+			String telephone, String streetAddress, String numberAddress, String zipCode, String city, String state,
+			String country, String patologia, LocalDate dataCadastro, LocalDateTime dataAtualizada, String senha) {
+		super(name, age, sex, cpf, nameMother, nameFather, email, telephone, streetAddress, numberAddress, zipCode,
+				city, state, country);
+		this.patology = patologia;
+		this.dataCadastro = dataCadastro;
+		this.dataAtualizada = dataAtualizada;
+		this.password = senha;
+	}
+
+	public String toString() {
+		return getName() + ":\n Patologia: " + getPatologia() + "\n Data de Cadastro: " + dataCadastro
+				+ "\n Data de Atualizacao:" + dataAtualizada + "\n Cpf: " + getCpf();
+	}
 
 	public String getPatologia() {
 		return patology;
@@ -42,31 +69,6 @@ public class Paciente extends Pessoa {
 		this.password = senha;
 	}
 
-	public Paciente() {
-	}
 
-	public Paciente(String patologia, LocalDate dataCadastro, LocalDateTime dataAtualizada, String senha) {
-		super();
-		this.patology = patologia;
-		this.dataCadastro = dataCadastro;
-		this.dataAtualizada = dataAtualizada;
-		this.password = senha;
-	}
-
-	public Paciente(String name, byte age, String sex, String cpf, String nameMother, String nameFather, String email,
-			String telephone, String streetAddress, String numberAddress, String zipCode, String city, String state,
-			String country, String patologia, LocalDate dataCadastro, LocalDateTime dataAtualizada, String senha) {
-		super(name, age, sex, cpf, nameMother, nameFather, email, telephone, streetAddress, numberAddress, zipCode,
-				city, state, country);
-		this.patology = patologia;
-		this.dataCadastro = dataCadastro;
-		this.dataAtualizada = dataAtualizada;
-		this.password = senha;
-	}
-
-	public String toString() {
-		return getName() + ":\n Patologia: " + getPatologia() + "\n Data de Cadastro: " + dataCadastro
-				+ "\n Data de Atualizacao:" + dataAtualizada + "\n Cpf: " + getCpf();
-	}
 
 }

@@ -49,7 +49,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 			break;
 
 		default:
-			System.out.println("Opï¿½ï¿½o invï¿½lida para o menu de " + super.getTitulo());
+			System.out.println("Opção inválida para o menu de " + super.getTitulo());
 			break;
 
 		}
@@ -79,7 +79,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		if (buscar(novo) == null) {
 			lista.put(novo.getCpf(), novo);
 		} else {
-			System.out.println("Jï¿½ existe um registro com CHAVE:" + novo.getName());
+			System.out.println("Já existe um registro com CHAVE:" + novo.getName());
 
 		}
 	}
@@ -94,7 +94,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	public void editar(Paciente chave) {
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("Nï¿½o existe um registro com CHAVE:" + chave.getCpf());
+			System.out.println("Não existe um registro com CHAVE:" + chave.getCpf());
 		} else {
 			lista.put(chave.getCpf(), capturarValoresEditar());
 			System.out.println("Dados atualizados");
@@ -107,7 +107,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("Nï¿½o existe um registro com CHAVE:" + chave.getCpf());
+			System.out.println("Não existe um registro com CHAVE:" + chave.getCpf());
 		} else {
 			lista.remove(chave.getCpf());
 			System.out.println("Item excluido");
@@ -139,6 +139,9 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 		System.out.println("Informe o Cpf:");
 		formulario.setCpf(super.getEntrada().next());
+		
+		System.out.println("Informe a Patologia");
+		formulario.setPatologia(super.getEntrada().next());
 
 		return formulario;
 
@@ -152,7 +155,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		byte option;
 
 		do {
-			System.out.println("Escolha qual inforÃ§Ã£o deseja alterar: ");
+			System.out.println("Escolha qual informação deseja alterar: ");
 			System.out.println("0-Retornar");
 			System.out.println("1-Nome");
 			System.out.println("2-Idade");
@@ -192,7 +195,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setCpf(super.getEntrada().next());
 				break;
 			case 5:
-				System.out.println("Informe o Nome da Mï¿½e:");
+				System.out.println("Informe o Nome da Mãe:");
 				formulario.setNameMother(super.getEntrada().next());
 				break;
 			case 6:
@@ -212,11 +215,11 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setStreetAddress(super.getEntrada().next());
 				break;
 			case 10:
-				System.out.println("Informe o Nï¿½mero da Casa:");
+				System.out.println("Informe o Número da Casa:");
 				formulario.setNumberAddress(super.getEntrada().next());
 				break;
 			case 11:
-				System.out.println("Informe o Cï¿½digo Postal");
+				System.out.println("Informe o Código Postal");
 				formulario.setZipCode(super.getEntrada().next());
 				break;
 			case 12:
@@ -228,13 +231,13 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setState(super.getEntrada().next());
 				break;
 			case 14:
-				System.out.println("Informe o Paï¿½s:");
+				System.out.println("Informe o País:");
 				formulario.setCountry(super.getEntrada().next());
 
 				break;
 
 			default:
-				System.out.println("Digite uma opÃ§Ã£o valida!");
+				System.out.println("Digite uma opção valida!");
 				break;
 			}
 		} while (option != 0);
@@ -315,11 +318,11 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setStreetAddress(super.getEntrada().next());
 				break;
 			case 12:
-				System.out.println("Informe o N�mero da Casa:");
+				System.out.println("Informe o Número da Casa:");
 				formulario.setNumberAddress(super.getEntrada().next());
 				break;
 			case 13:
-				System.out.println("Informe o C�digo Postal");
+				System.out.println("Informe o Código Postal");
 				formulario.setZipCode(super.getEntrada().next());
 				break;
 			case 14:
@@ -331,7 +334,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setState(super.getEntrada().next());
 				break;
 			case 16:
-				System.out.println("Informe o Pa�s:");
+				System.out.println("Informe o Pais:");
 				formulario.setCountry(super.getEntrada().next());
 				break;
 
@@ -349,7 +352,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	@Override
 	public void exibirDetalhes(Paciente completo) {
 		if (completo == null) {
-			System.out.println("Nï¿½o foi possivel exibir os detalhes, item nï¿½o localizado");
+			System.out.println("Não foi possivel exibir os detalhes");
 		} else {
 			System.out.println(completo.toString());
 		}

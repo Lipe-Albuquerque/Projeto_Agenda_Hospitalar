@@ -118,7 +118,15 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 
 	public Medico capturarChaveMedico() {
 		Medico agenda = new Medico();
-		System.out.println("Informe o cpf: ");
+		System.out.println("Informe o cpf do medico: ");
+		agenda.setCpf(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
+
+		return agenda;
+	}
+
+	public Paciente capturarChavePaciente() {
+		Paciente agenda = new Paciente();
+		System.out.println("Informe o cpf do paciente: ");
 		agenda.setCpf(super.getEntrada().next().replaceAll("\\p{Punct}", ""));
 
 		return agenda;
@@ -137,9 +145,13 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		listarMedico(listaMedico);
 
 		agenda.setMedico(buscarMedico(capturarChaveMedico()));
-
+		agenda.setPaciente(buscarPaciente(capturarChavePaciente()));
 		System.out.println("Informe a data do Agendamento: ");
 		agenda.setDataAgendamento(super.getEntrada().next());
+
+		System.out.println("Foi agendando uma consulta codigo: " + agenda.getId() + " com o medico: "
+				+ agenda.getMedico().getName() + " no dia: " + agenda.getDataAgendamento() + " com o paciente: "
+				+ agenda.getPaciente().getName());
 
 		return agenda;
 	}
@@ -171,4 +183,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		return listaMedico.get(chave.getCpf());
 	}
 
+	public Paciente buscarPaciente(Paciente chave) {
+		return listaPaciente.get(chave.getCpf());
+	}
 }

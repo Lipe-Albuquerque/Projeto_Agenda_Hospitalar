@@ -139,11 +139,11 @@ public class AdminCRUD extends Menu implements ICrud<Admin> {
 
 		Admin formulario = new Admin();
 
-		System.out.println("Informe o novo login:");
-		formulario.setLogin(super.getEntrada().next());
+		//System.out.println("Informe o novo login:");
+		//formulario.setLogin(super.getEntrada().next());
 
-		System.out.println("Informe a senha:");
-		formulario.setSenha(super.getEntrada().next());
+		//System.out.println("Informe a senha:");
+		//formulario.setSenha(super.getEntrada().next());
 
 		return formulario;
 

@@ -66,12 +66,17 @@ public class Login {
 			System.out.println("Informe o login do novo funcionario:");
 			login = input.next().trim();
 			Admin admin = BancoFicticio.admin.get(login);
-
+			
 			if (admin != null) {
 				throw new SenhaIncorretaException();
 			} else {
+				
 				admin = new AdminCRUD().capturarValores();
 				admin.setLogin(login);
+				System.out.println("Informe a senha:");
+				senha = input.next();
+				admin.setSenha(senha);
+				
 				BancoFicticio.admin.put(login, admin);
 			}
 

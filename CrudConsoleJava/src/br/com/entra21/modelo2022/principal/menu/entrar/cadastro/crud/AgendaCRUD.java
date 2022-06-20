@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import br.com.entra21.modelo2022.principal.BancoFicticio;
+import br.com.entra21.modelo2022.principal.Login;
 import br.com.entra21.modelo2022.principal.Menu;
 import br.com.entra21.modelo2022.principal.modelobase.Agenda;
 import br.com.entra21.modelo2022.principal.modelobase.Medico;
@@ -128,16 +129,15 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 
 		Agenda agenda = new Agenda();
 
-
 		if (agenda.getId() < lista.size()) {
 			agenda.setId(lista.size() + 1);
 		} else {
 
 		}
 		listarMedico(listaMedico);
-		
+
 		agenda.setMedico(buscarMedico(capturarChaveMedico()));
-		
+
 		System.out.println("Informe a data do Agendamento: ");
 		agenda.setDataAgendamento(super.getEntrada().next());
 

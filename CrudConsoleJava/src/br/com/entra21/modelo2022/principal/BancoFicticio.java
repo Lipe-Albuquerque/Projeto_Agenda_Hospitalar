@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import br.com.entra21.modelo2022.principal.modelobase.Admin;
 import br.com.entra21.modelo2022.principal.modelobase.Agenda;
 import br.com.entra21.modelo2022.principal.modelobase.Medico;
 import br.com.entra21.modelo2022.principal.modelobase.Paciente;
@@ -21,10 +22,13 @@ public class BancoFicticio {
 
 	public static HashMap<String, Medico> medicos = new HashMap<>();
 
+	public static HashMap<String, Admin> admin = new HashMap<>();
+	
 	public static void gerarBancoDados() {
 		inicializarMedicos();
 		inicializarPacientes();
 		inicializrAgenda();
+		inicializarAdmin();
 
 	}
 
@@ -36,20 +40,20 @@ public class BancoFicticio {
 		teste1.setPaciente(pacientes.get("897.123.489-63"));
 		teste1.setDataAgendamento(LocalDate.of(2022, 02, 20).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
 		agendas.put(String.valueOf(teste1.getId()), teste1);
-
-		Agenda teste2 = new Agenda();
-		teste2.setId(2);
-		teste2.setMedico(medicos.get("02323689645"));
-		teste2.setPaciente(pacientes.get("023.156.159-62"));
-		teste2.setDataAgendamento(LocalDate.of(2022, 10, 15).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
-		agendas.put(String.valueOf(teste2.getId()), teste2);
-
-		Agenda teste3 = new Agenda();
-		teste3.setId(3);
-		teste3.setMedico(medicos.get("12356315985"));
-		teste3.setPaciente(pacientes.get("02310255885"));
-		teste3.setDataAgendamento(LocalDate.of(2022, 05, 20).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
-		agendas.put(String.valueOf(teste3.getId()), teste3);
+//
+//		Agenda teste2 = new Agenda();
+//		teste2.setId(2);
+//		teste2.setMedico(medicos.get("02323689645"));
+//		teste2.setPaciente(pacientes.get("02356369896"));
+//		teste2.setDataAgendamento(LocalDate.of(2022, 10, 15).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
+//		agendas.put(String.valueOf(teste2.getId()), teste2);
+//
+//		Agenda teste3 = new Agenda();
+//		teste3.setId(3);
+//		teste3.setMedico(medicos.get("12356315985"));
+//		teste3.setPaciente(pacientes.get("02310255885"));
+//		teste3.setDataAgendamento(LocalDate.of(2022, 05, 20).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
+//		agendas.put(String.valueOf(teste3.getId()), teste3);
 
 		Agenda teste4 = new Agenda();
 		teste4.setId(4);
@@ -120,4 +124,21 @@ public class BancoFicticio {
 						"senha"));
 
 	}
+	
+	public static void inicializarAdmin(){
+		
+		Admin filipe = new Admin();
+		Admin ariana = new Admin();
+		
+		filipe.setLogin("batatinha");
+		filipe.setSenha("laranjinha");
+		admin.put(filipe.getLogin(), filipe);
+		ariana.setLogin("princesa");
+		ariana.setSenha("pudimmm");
+		admin.put(ariana.getLogin(), ariana);
+		
+		
+	}
+	
+	
 }

@@ -8,7 +8,8 @@ Teremos dois perfis inicialmente, o Paciente e o Médico (que pode ser qualquer 
 Ambos os perfis poderão fazer cadastro e login na plataforma. Os pacientes poderão procurar qual médico estará disponível no horário que estes necessitam, eles podererão ver seus próprios agendamentos , alterar suas datas e horários, trocar de profissional ou mesmo desmarcar uma consulta. Já o médico, poderá compartilhar agendas e dias disponíveis para atendimento aos pacentes, visualizar seus atendimentos do dia e desmarcar uma consulta pré agendada.
 <br>
 
-## O que a Agenda Hospitalar resolve?
+## O que a Agenda Hospitalar resolve? 
+
 
 A Agenda Hospitalar resolve um dos principais problemas para o cidadão: encaixar seus horários com os do profissionais da saúde. Muitas vezes fica difícil para o cidadão ter um dia de folga no trabalho para comparecer ao médico. A intenção da Agenda Hospitalar, é facilitar o agendamento dessas consultas.
 

@@ -36,7 +36,9 @@ public class Main {
 			case 2:
 				Login.cadastrar(LIMITE_TENTATIVA);
 				break;
-			
+			case 3: 
+				Login.exibirInformacoesSobre();
+				break;
 			default:
 				System.out.println("Escolha uma op��o v�lida");
 				break;

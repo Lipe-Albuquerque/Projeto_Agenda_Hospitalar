@@ -129,13 +129,20 @@ public class BancoFicticio {
 		
 		Admin filipe = new Admin();
 		Admin ariana = new Admin();
+		Admin thiago = new Admin();
+		
 		
 		filipe.setLogin("batatinha");
 		filipe.setSenha("laranjinha");
 		admin.put(filipe.getLogin(), filipe);
+		
 		ariana.setLogin("princesa");
 		ariana.setSenha("pudimmm");
 		admin.put(ariana.getLogin(), ariana);
+		
+		thiago.setLogin("tainha");
+		thiago.setSenha("pureza");
+		admin.put(thiago.getLogin(), thiago);
 		
 		
 	}

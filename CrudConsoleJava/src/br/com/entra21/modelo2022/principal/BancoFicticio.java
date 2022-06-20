@@ -97,7 +97,7 @@ public class BancoFicticio {
 		pacientes.put("023.156.159-62",
 				new Paciente("Peter Parker", (byte) 21, "Masculino", "023.156.159-62", "Mary Parker", "Richard Parker",
 						"peter.parker@gmail.com", " 47 98563-4541", "Rua dos Limoeiros", "569", "88780-000", "Imbituba",
-						"SC", "BR", "Limpeza dentariaria", LocalDate.of(2022, 12, 30), LocalDateTime.now(), "senha"));
+						"SC", "BR", "Limpeza dentaria", LocalDate.of(2022, 12, 30), LocalDateTime.now(), "senha"));
 
 		// pacientes de Smallville
 		pacientes.put("12356315985",

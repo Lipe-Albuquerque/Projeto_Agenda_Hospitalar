@@ -49,7 +49,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 			break;
 
 		default:
-			System.out.println("Op��o inv�lida para o menu de " + super.getTitulo());
+			System.out.println("Opï¿½ï¿½o invï¿½lida para o menu de " + super.getTitulo());
 			break;
 
 		}
@@ -79,7 +79,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		if (buscar(novo) == null) {
 			lista.put(novo.getCpf(), novo);
 		} else {
-			System.out.println("J� existe um registro com CHAVE:" + novo.getName());
+			System.out.println("Jï¿½ existe um registro com CHAVE:" + novo.getName());
 
 		}
 	}
@@ -94,9 +94,9 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	public void editar(Paciente chave) {
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("N�o existe um registro com CHAVE:" + chave.getCpf());
+			System.out.println("Nï¿½o existe um registro com CHAVE:" + chave.getCpf());
 		} else {
-			lista.put(chave.getCpf(), capturarValores());
+			lista.put(chave.getCpf(), capturarValoresEditar());
 			System.out.println("Dados atualizados");
 		}
 
@@ -107,7 +107,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("N�o existe um registro com CHAVE:" + chave.getCpf());
+			System.out.println("Nï¿½o existe um registro com CHAVE:" + chave.getCpf());
 		} else {
 			lista.remove(chave.getCpf());
 			System.out.println("Item excluido");
@@ -152,13 +152,13 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		byte option;
 
 		do {
-			System.out.println("Escolha qual inforção deseja alterar: ");
+			System.out.println("Escolha qual inforÃ§Ã£o deseja alterar: ");
 			System.out.println("0-Retornar");
 			System.out.println("1-Nome");
 			System.out.println("2-Idade");
 			System.out.println("3-Sexo");
 			System.out.println("4-Cpf");
-			System.out.println("5-Nome da mãe");
+			System.out.println("5-Nome da mÃ£e");
 			System.out.println("6-Nome do pai");
 			System.out.println("7-e-mail");
 			System.out.println("8-Telefone");
@@ -192,7 +192,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setCpf(super.getEntrada().next());
 				break;
 			case 5:
-				System.out.println("Informe o Nome da M�e:");
+				System.out.println("Informe o Nome da Mï¿½e:");
 				formulario.setNameMother(super.getEntrada().next());
 				break;
 			case 6:
@@ -212,11 +212,11 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setStreetAddress(super.getEntrada().next());
 				break;
 			case 10:
-				System.out.println("Informe o N�mero da Casa:");
+				System.out.println("Informe o Nï¿½mero da Casa:");
 				formulario.setNumberAddress(super.getEntrada().next());
 				break;
 			case 11:
-				System.out.println("Informe o C�digo Postal");
+				System.out.println("Informe o Cï¿½digo Postal");
 				formulario.setZipCode(super.getEntrada().next());
 				break;
 			case 12:
@@ -228,16 +228,120 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setState(super.getEntrada().next());
 				break;
 			case 14:
-				System.out.println("Informe o Pa�s:");
+				System.out.println("Informe o Paï¿½s:");
 				formulario.setCountry(super.getEntrada().next());
 
+				break;
+
+			default:
+				System.out.println("Digite uma opÃ§Ã£o valida!");
+				break;
+			}
+		} while (option != 0);
+		return formulario;
+
+	}
+	
+	public Paciente capturarValoresEditar() {
+
+		Scanner input = new Scanner(System.in);
+		Paciente formulario = buscar(capturarChave());
+		byte option;
+
+		do {
+			System.out.println("========================================");
+			System.out.println("Escolha qual inforção deseja alterar: ");
+			System.out.println("0-Retornar");
+			System.out.println("1-Nome");
+			System.out.println("2-Patologia");
+			System.out.println("3-Idade");
+			System.out.println("4-Sexo");
+			System.out.println("5-Cpf");
+			System.out.println("6-Nome da mãe");
+			System.out.println("7-Nome do pai");
+			System.out.println("8-e-mail");
+			System.out.println("9-Telefone");
+			System.out.println("10-Nome da rua");
+			System.out.println("11-Numero da casa");
+			System.out.println("12-Codigo Postal");
+			System.out.println("13-Cidade");
+			System.out.println("14-Estado");
+			System.out.println("15-Pais");
+			option = input.nextByte();
+
+			switch (option) {
+			case 0:
+				System.out.println("Voltando...");
+				break;
+				
+			case 1:
+				System.out.println("Informe o novo Nome:");
+				formulario.setName(super.getEntrada().next());
+				break;
+			case 2:
+				System.out.println("Informe a Patologia:");
+				formulario.setPatologia(super.getEntrada().next());
+				break;
+			case 3:
+				System.out.println("Informe o Idade:");
+				formulario.setAge(super.getEntrada().nextByte());
+				break;
+			case 4:
+				System.out.println("Informe o Sexo:");
+				formulario.setSex(super.getEntrada().next());
+				break;
+			case 5:
+				System.out.println("Informe o Cpf:");
+				formulario.setCpf(super.getEntrada().next());
+				break;
+			case 6:
+				System.out.println("Informe o Nome da M�e:");
+				formulario.setNameMother(super.getEntrada().next());
+				break;
+			case 7:
+				System.out.println("Informe o Nome do Pai:");
+				formulario.setNameFather(super.getEntrada().next());
+				break;
+			case 8:
+				System.out.println("Informe o e-mail:");
+				formulario.setEmail(super.getEntrada().next());
+				break;
+			case 10:
+				System.out.println("Informe o Telefone:");
+				formulario.setTelephone(super.getEntrada().next());
+				break;
+			case 11:
+				System.out.println("Informe o Nome da Rua:");
+				formulario.setStreetAddress(super.getEntrada().next());
+				break;
+			case 12:
+				System.out.println("Informe o N�mero da Casa:");
+				formulario.setNumberAddress(super.getEntrada().next());
+				break;
+			case 13:
+				System.out.println("Informe o C�digo Postal");
+				formulario.setZipCode(super.getEntrada().next());
+				break;
+			case 14:
+				System.out.println("Informe a Cidade:");
+				formulario.setCity(super.getEntrada().next());
+				break;
+			case 15:
+				System.out.println("Informe o Estado:");
+				formulario.setState(super.getEntrada().next());
+				break;
+			case 16:
+				System.out.println("Informe o Pa�s:");
+				formulario.setCountry(super.getEntrada().next());
 				break;
 
 			default:
 				System.out.println("Digite uma opção valida!");
 				break;
 			}
+
 		} while (option != 0);
+
 		return formulario;
 
 	}
@@ -245,7 +349,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	@Override
 	public void exibirDetalhes(Paciente completo) {
 		if (completo == null) {
-			System.out.println("N�o foi possivel exibir os detalhes, item n�o localizado");
+			System.out.println("Nï¿½o foi possivel exibir os detalhes, item nï¿½o localizado");
 		} else {
 			System.out.println(completo.toString());
 		}

@@ -20,6 +20,7 @@ import br.com.entra21.modelo2022.principal.modelobase.Paciente;
 public class BancoFicticio {
 	
 	@ClassesDescontinuadas
+	
 	@Lembrete
 
 	public static HashMap<String, Paciente> pacientes = new HashMap<>();

@@ -1,9 +1,5 @@
 package br.com.entra21.modelo2022.principal.modelobase;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.HashSet;
-
 import br.com.entra21.modelo2022.principal.Turno;
 
 public class Medico extends Pessoa {

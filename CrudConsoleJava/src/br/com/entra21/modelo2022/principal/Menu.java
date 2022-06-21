@@ -23,6 +23,7 @@ public class Menu {
 			System.out.println(" 0 = Voltar");
 
 			if (option != null && !option.isEmpty()) {
+				// TODO 01 Logica - Operadores de incremento e decremento
 				for (int contador = 0; contador < option.size(); contador++) {
 					System.out.println(" " + (contador + 1) + " = " + option.get(contador));
 				}
@@ -30,6 +31,7 @@ public class Menu {
 				System.out.println("Nao ha itens especificos para esse menu???");
 			}
 
+			// TODO 01 Logica - Operadores de igualdade
 		} while (capturarOpcao() != 0);
 	}
 	

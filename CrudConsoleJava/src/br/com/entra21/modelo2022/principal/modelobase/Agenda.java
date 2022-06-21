@@ -1,8 +1,5 @@
 package br.com.entra21.modelo2022.principal.modelobase;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class Agenda {
 
 	private int id;
@@ -65,7 +62,7 @@ public class Agenda {
 	}
 
 	public String toString() {
-		return "Médico: " + getMedico().getName() + "\nPaciente: " + getPaciente() + "\nID Agendamento: " + getId()
+		return "Medico: " + getMedico().getName() + "\nPaciente: " + getPaciente() + "\nID Agendamento: " + getId()
 				+ " na data de: " + getDataAgendamento();
 	}
 

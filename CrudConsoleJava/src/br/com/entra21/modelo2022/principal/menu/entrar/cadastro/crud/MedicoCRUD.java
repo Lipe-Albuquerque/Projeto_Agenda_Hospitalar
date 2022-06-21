@@ -184,7 +184,6 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		Scanner input = new Scanner(System.in);
 		Medico formulario = buscar(capturarChave());
 		byte option;
-		//TODO
 		do {
 			System.out.println("Escolha qual informacao deseja alterar: ");
 			System.out.println("0-Retornar");

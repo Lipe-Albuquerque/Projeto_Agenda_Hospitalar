@@ -63,14 +63,16 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 	@Override
 	public void listar(HashMap<String, Paciente> lista) {
-		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
+		System.out.println("|------------------------------ LISTA " + getTitulo() + " ----------------------------------|");
+		System.out.println("|--------------------------------------------------------------------------------|\n");
 		for (Paciente paciente : lista.values()) {
 
 			System.out.println("\t" + paciente.getName() + " - " + paciente.getPatologia() + " - " + paciente.getCpf());
 
 		}
 
-		System.out.println("------------- QUANTIDADE (" + lista.size() + ") --------------");
+		System.out.println("|------------------------------- QUANTIDADE (" + lista.size() + ") ---------------------------------|");
+		System.out.println("|--------------------------------------------------------------------------------|\n");
 	}
 
 	@Override
@@ -79,7 +81,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		if (buscar(novo) == null) {
 			lista.put(novo.getCpf(), novo);
 		} else {
-			System.out.println("Já existe um registro com CHAVE:" + novo.getName());
+			System.out.println("Ja existe um registro com CHAVE:" + novo.getName());
 
 		}
 	}
@@ -94,7 +96,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	public void editar(Paciente chave) {
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("Não existe um registro com CHAVE:" + chave.getCpf());
+			System.out.println("Nao existe um registro com CHAVE:" + chave.getCpf());
 		} else {
 			lista.put(chave.getCpf(), capturarValoresEditar());
 			System.out.println("Dados atualizados");
@@ -107,7 +109,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 
 		Paciente PacienteAtual = buscar(chave);
 		if (PacienteAtual == null) {
-			System.out.println("Não existe um registro com CHAVE:" + chave.getCpf());
+			System.out.println("Nao existe um registro com CHAVE:" + chave.getCpf());
 		} else {
 			lista.remove(chave.getCpf());
 			System.out.println("Item excluido");
@@ -137,7 +139,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		System.out.println("Informe o Sexo:");
 		formulario.setSex(super.getEntrada().next());
 
-		System.out.println("Informe o Cpf:");
+		System.out.println("Informe o CPF:");
 		formulario.setCpf(super.getEntrada().next());
 		
 		System.out.println("Informe a Patologia");
@@ -155,13 +157,13 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 		byte option;
 
 		do {
-			System.out.println("Escolha qual informação deseja alterar: ");
+			System.out.println("Escolha qual informacao deseja alterar: ");
 			System.out.println("0-Retornar");
 			System.out.println("1-Nome");
 			System.out.println("2-Idade");
 			System.out.println("3-Sexo");
 			System.out.println("4-Cpf");
-			System.out.println("5-Nome da mÃ£e");
+			System.out.println("5-Nome da mae");
 			System.out.println("6-Nome do pai");
 			System.out.println("7-e-mail");
 			System.out.println("8-Telefone");
@@ -195,7 +197,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setCpf(super.getEntrada().next());
 				break;
 			case 5:
-				System.out.println("Informe o Nome da Mãe:");
+				System.out.println("Informe o Nome da Mae:");
 				formulario.setNameMother(super.getEntrada().next());
 				break;
 			case 6:
@@ -231,13 +233,13 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 				formulario.setState(super.getEntrada().next());
 				break;
 			case 14:
-				System.out.println("Informe o País:");
+				System.out.println("Informe o Pais:");
 				formulario.setCountry(super.getEntrada().next());
 
 				break;
 
 			default:
-				System.out.println("Digite uma opção valida!");
+				System.out.println("Digite uma opcao valida!");
 				break;
 			}
 		} while (option != 0);
@@ -352,7 +354,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 	@Override
 	public void exibirDetalhes(Paciente completo) {
 		if (completo == null) {
-			System.out.println("Não foi possivel exibir os detalhes");
+			System.out.println("Nao foi possivel exibir os detalhes");
 		} else {
 			System.out.println(completo.toString());
 		}

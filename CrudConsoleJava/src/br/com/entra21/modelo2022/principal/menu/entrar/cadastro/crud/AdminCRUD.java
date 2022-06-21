@@ -56,16 +56,19 @@ public class AdminCRUD extends Menu implements ICrud<Admin> {
 
 	@Override
 	public void listar(HashMap<String, Admin> lista) {
-		System.out.println("---------------------------- LISTA " + getTitulo() + "------------------------------------");
+		System.out
+				.println("---------------------------- LISTA " + getTitulo() + "------------------------------------");
 		System.out.println("\n|--------------------------------------------------------------------------------|");
-		
+
 		for (Admin admin : lista.values()) {
 
 			System.out.println("\t" + admin.getLogin());
 
 		}
 
-		System.out.println("------------- QUANTIDADE (" + lista.size() + ") --------------");
+		System.out.println("|------------------------------- QUANTIDADE (" + lista.size()
+				+ ") ---------------------------------|");
+		System.out.println("|--------------------------------------------------------------------------------|\n");
 
 	}
 
@@ -76,7 +79,7 @@ public class AdminCRUD extends Menu implements ICrud<Admin> {
 		if (buscar(novo) == null) {
 			lista.put(novo.getLogin(), novo);
 		} else {
-			System.out.println("J� existe um registro com CHAVE:" + novo.getLogin());
+			System.out.println("Ja existe um registro com CHAVE:" + novo.getLogin());
 		}
 
 	}
@@ -92,7 +95,7 @@ public class AdminCRUD extends Menu implements ICrud<Admin> {
 
 		Admin adminAtual = buscar(chave);
 		if (adminAtual == null) {
-			System.out.println("N�o existe um registro com CHAVE:" + chave.getLogin());
+			System.out.println("Nao existe um registro com CHAVE:" + chave.getLogin());
 		} else {
 			lista.put(chave.getLogin(), capturarValores());
 			System.out.println("Dados atualizados");
@@ -104,7 +107,7 @@ public class AdminCRUD extends Menu implements ICrud<Admin> {
 
 		Admin adminAtual = buscar(chave);
 		if (adminAtual == null) {
-			System.out.println("N�o existe um registro com CHAVE:" + chave.getLogin());
+			System.out.println("Nao existe um registro com CHAVE:" + chave.getLogin());
 		} else {
 			lista.remove(chave.getLogin());
 			System.out.println("Item excluido");
@@ -141,11 +144,11 @@ public class AdminCRUD extends Menu implements ICrud<Admin> {
 
 		Admin formulario = new Admin();
 
-		//System.out.println("Informe o novo login:");
-		//formulario.setLogin(super.getEntrada().next());
+		// System.out.println("Informe o novo login:");
+		// formulario.setLogin(super.getEntrada().next());
 
-		//System.out.println("Informe a senha:");
-		//formulario.setSenha(super.getEntrada().next());
+		// System.out.println("Informe a senha:");
+		// formulario.setSenha(super.getEntrada().next());
 
 		return formulario;
 
@@ -155,7 +158,7 @@ public class AdminCRUD extends Menu implements ICrud<Admin> {
 	public void exibirDetalhes(Admin completo) {
 
 		if (completo == null) {
-			System.out.println("N�o � possivel exibir os detalhes, item n�o localizado");
+			System.out.println("Nao e  possivel exibir os detalhes, item nao localizado");
 		} else {
 			System.out.println(completo.toString());
 		}

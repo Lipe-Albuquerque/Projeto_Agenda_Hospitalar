@@ -17,7 +17,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	private HashMap<String, Agenda> lista = BancoFicticio.agendas;
 
 	public AgendaCRUD() {
-		super("Agenda --", opcoes);
+		super(" Agenda  ", opcoes);
 	}
 
 	public byte capturarOpcao() {
@@ -61,8 +61,8 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	@Override
 	public void listar(HashMap<String, Agenda> lista) {
 		System.out.println(
-				"|------------------------------- LISTA " + getTitulo() + "-----------------------------------|");
-		System.out.println("|\t-------- PACIENTE ------  DATA ------ MEDICO-----|");
+				"|------------------------------- LISTA " + getTitulo() + "---------------------------------|");
+		System.out.println("\t|-------- PACIENTE ------  DATA ------ MEDICO-----|");
 		for (Agenda agenda : lista.values()) {
 			System.out.println("\t" + agenda.getId() + " - " + agenda.getPaciente().getName() + " - "
 					+ agenda.getDataAgendamento() + " - " + agenda.getMedico().getName());

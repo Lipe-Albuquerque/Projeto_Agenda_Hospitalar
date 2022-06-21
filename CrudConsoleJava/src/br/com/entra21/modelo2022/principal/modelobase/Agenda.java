@@ -65,7 +65,7 @@ public class Agenda {
 	}
 
 	public String toString() {
-		return "Médico: " + getMedico().getName() + ", Paciente: " + getPaciente() + "\n ID Agendamento: " + getId()
+		return "Médico: " + getMedico().getName() + "\nPaciente: " + getPaciente() + "\nID Agendamento: " + getId()
 				+ " na data de: " + getDataAgendamento();
 	}
 

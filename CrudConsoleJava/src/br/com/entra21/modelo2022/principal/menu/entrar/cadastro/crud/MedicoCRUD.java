@@ -57,7 +57,6 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 
 	@Override
 	public void listar(HashMap<String, Medico> lista) {
-		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
 		System.out.println("|------------------------------ LISTA " + getTitulo() + " ----------------------------------|");
 		System.out.println("\n|---------------------------------------------------------------------------------|");
 		for (Medico medico : lista.values()) {

@@ -29,7 +29,7 @@ public class MenuPrincipal extends Menu {
 		case 2:
 		//	new Menu
 		default:
-			System.out.println("Op��o inv�lida para o menu de " + super.getTitulo());
+			System.out.println("Opcao invalida para o menu de " + super.getTitulo());
 			break;
 		}
 		return opcao;

@@ -89,12 +89,12 @@ public class BancoFicticio {
 	private static void inicializarPacientes() {
 		// pacientes de Imbituba
 
-		pacientes.put("897.123.489-63",
+		pacientes.put("89712348963",
 				new Paciente("Steve Rogers", (byte) 29, "Masculino", "897.123.489-63", "Sarah Rogers", "Joseph Rogers",
 						"steve.rogers@yahoo.com", "47 98965-5263", "Av das Americas", "407", "88780-000", "Imbituba",
 						"SC", "BR", "dor", LocalDate.of(2022, 12, 30), LocalDateTime.now(), "senha"));
 
-		pacientes.put("023.156.159-62",
+		pacientes.put("02315615962",
 				new Paciente("Peter Parker", (byte) 21, "Masculino", "023.156.159-62", "Mary Parker", "Richard Parker",
 						"peter.parker@gmail.com", " 47 98563-4541", "Rua dos Limoeiros", "569", "88780-000", "Imbituba",
 						"SC", "BR", "Limpeza dentaria", LocalDate.of(2022, 12, 30), LocalDateTime.now(), "senha"));

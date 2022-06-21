@@ -60,7 +60,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	@Override
 	public void listar(HashMap<String, Agenda> lista) {
 		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
-
+		System.out.println("----------- PACIENTE ------  DATA ------ MEDICO------");
 		for (Agenda agenda : lista.values()) {
 			System.out.println("\t" + agenda.getId() + " - " + agenda.getPaciente().getName() + " - "
 					+ agenda.getDataAgendamento() + " - " + agenda.getMedico().getName());

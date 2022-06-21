@@ -27,10 +27,10 @@ public class Login {
 					+ (tentativa > 1 ? " tentativas" : " tentativa") + " de login:");
 		}
 		try {
-			System.out.println("Informe o CPF do funcionario:");
+			System.out.println("Informe o LOGIN do funcionario:");
 			Admin admin = BancoFicticio.admin.get(input.next().trim());
 
-			System.out.println("Funcionario encontrado :" + admin.getLogin());
+			System.out.println("Funcionario encontrado : " + admin.getLogin());
 			System.out.println("Informe a senha para liberar o acesso:");
 
 			if (!admin.getSenha().equals(input.next())) {
@@ -130,7 +130,8 @@ public class Login {
 	public static void definirAdminoLogado(Admin admin) {
 
 		if (admin != null) {
-			System.out.println("Bem vindo, " + admin.getLogin());
+			
+			System.out.println("\nBem vindo, " + admin.getLogin());
 		} else {
 			System.out.println("Ate a proxima " + admin.getLogin() + ", volte sempre que precisar.");
 		}

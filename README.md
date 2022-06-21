@@ -71,8 +71,10 @@ O projeto foi desenvolvido com apoio de nosso tutor [Rubem Oliota](https://githu
 ### [Visualize o fluxograma aqui.](https://miro.com/app/board/uXjVOr0rIfw=/?share_link_id=232371427063)
 
 <center>
+
 <img src=./gif_img/fluxograma_exemplo.png
      alt="Diagrama de Classe" width= 80% height=80%>
+     
 </center>
 <br>
 

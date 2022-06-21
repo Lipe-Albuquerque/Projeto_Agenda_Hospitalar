@@ -4,13 +4,13 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Agenda {
-	
+
 	private int id;
 	private Paciente paciente;
 	private Medico medico;
 	private String DataAgendamento;
 	private String DataCancelamento;
-	
+
 	public Agenda() {
 		super();
 	}
@@ -63,9 +63,10 @@ public class Agenda {
 	public void setDataCancelamento(String dataCancelamento) {
 		DataCancelamento = dataCancelamento;
 	}
-	
+
 	public String toString() {
-		return "M�dico: " + getMedico().getName() + "\n ID Agendamento: " + getId();
+		return "Médico: " + getMedico().getName() + ", Paciente: " + getPaciente() + "\n ID Agendamento: " + getId()
+				+ " na data de: " + getDataAgendamento();
 	}
-	
+
 }

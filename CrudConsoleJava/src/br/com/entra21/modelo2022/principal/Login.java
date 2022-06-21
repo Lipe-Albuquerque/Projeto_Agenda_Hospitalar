@@ -40,7 +40,7 @@ public class Login {
 				return;
 			}
 		} catch (NullPointerException e) {
-			System.out.println("Nenhum funcionario encontrado com esse CPF");
+			System.out.println("Nenhum funcionario encontrado com esse LOGIN");
 			entrar(--tentativa);
 			return;
 		} catch (SenhaIncorretaException e) {

@@ -37,7 +37,7 @@ public class BancoFicticio {
 		Agenda teste1 = new Agenda();
 		teste1.setId(1);
 		teste1.setMedico(medicos.get("91614967075"));
-		teste1.setPaciente(pacientes.get("897.123.489-63"));
+		teste1.setPaciente(pacientes.get("89712348963"));
 		teste1.setDataAgendamento(LocalDate.of(2022, 02, 20).format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
 		agendas.put(String.valueOf(teste1.getId()), teste1);
 //

@@ -2,6 +2,7 @@ package br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 import br.com.entra21.modelo2022.principal.BancoFicticio;
 import br.com.entra21.modelo2022.principal.Login;
@@ -82,7 +83,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 
 	@Override
 	public Agenda buscar(Agenda chave) {
-		return lista.get(chave.getId());
+		return lista.get(String.valueOf(chave.getId()));
 	}
 
 	@Override
@@ -91,7 +92,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		if (agendaAtual == null) {
 			System.out.println("N�o existe um registro com essa CHAVE: " + agendaAtual.getId());
 		} else {
-			lista.put(String.valueOf(chave.getId()), capturarValores());
+			lista.put(String.valueOf(chave.getId()), capturarValoresEditar());
 			System.out.println("Dados Atualizados");
 		}
 	}
@@ -102,7 +103,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		if (agendaAtual == null) {
 			System.out.println("N�o existe um registro com essa CHAVE: " + agendaAtual.getId());
 		} else {
-			lista.remove(chave.getId());
+			lista.remove(String.valueOf(chave.getId()));
 			System.out.println("Item excluido");
 		}
 	}
@@ -132,6 +133,55 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		return agenda;
 	}
 
+	public Agenda capturarValoresEditar() {
+
+		Agenda agenda = buscar(capturarChave());
+		Scanner input = new Scanner(System.in);
+		
+		byte option;
+		do {
+			System.out.println("Informe qual dado deseja alterar do agendamento: " + agenda.getId());
+			System.out.println("0 - Sair");
+			System.out.println("1 - Medico");
+			System.out.println("2 - Paciente");
+			System.out.println("3 - Data");
+			option = input.nextByte();
+
+			switch (option) {
+			case 1:
+				agenda.setMedico(buscarMedico(capturarChaveMedico()));
+				System.out.println("Medico alterado com sucesso!");
+				break;
+			case 2:
+				agenda.setPaciente(buscarPaciente(capturarChavePaciente()));
+				System.out.println("Paciente alterado com sucesso!");
+				break;
+			case 3:
+				agenda.setDataAgendamento(getEntrada().next());
+				System.out.println("Data alterada com sucesso!");
+				break;
+
+			default:
+				System.out.println("Selecione uma opção valida");
+				break;
+			}
+
+		} while (option != 0);
+
+		agenda.setMedico(buscarMedico(capturarChaveMedico()));
+		agenda.setPaciente(buscarPaciente(capturarChavePaciente()));
+		System.out.println("Informe a data do Agendamento: ");
+		agenda.setDataAgendamento(super.getEntrada().next());
+
+		System.out.println("Foi agendando uma consulta codigo: " + agenda.getId() + " com o medico: "
+				+ agenda.getMedico().getName() + " no dia: " + agenda.getDataAgendamento() + " com o paciente: "
+				+ agenda.getPaciente().getName());
+
+		return agenda;
+	}
+
+	
+	
 	@Override
 	public Agenda capturarValores() {
 

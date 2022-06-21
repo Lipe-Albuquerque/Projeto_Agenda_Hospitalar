@@ -45,7 +45,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 			break;
 
 		default:
-			System.out.println("Op��o inv�lida para o menu de " + super.getTitulo());
+			System.out.println("Opcao invalida para o menu de " + super.getTitulo());
 			break;
 
 		}
@@ -60,15 +60,16 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 
 	@Override
 	public void listar(HashMap<String, Agenda> lista) {
-		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
-		System.out.println("----------- PACIENTE ------  DATA ------ MEDICO------");
+		System.out.println("|------------------------------- LISTA " + getTitulo() + "-----------------------------------|");
+		System.out.println("\n|--------------------------------------------------------------------------------|");
+		System.out.println("|-------- PACIENTE ------  DATA ------ MEDICO-----|");
 		for (Agenda agenda : lista.values()) {
 			System.out.println("\t" + agenda.getId() + " - " + agenda.getPaciente().getName() + " - "
 					+ agenda.getDataAgendamento() + " - " + agenda.getMedico().getName());
 		}
 
-		System.out.println("------------- QUANTIDADE (" + lista.size() + ") --------------");
-
+		System.out.println("-------------------------- QUANTIDADE1111 (" + lista.size() + ") ----------------------------");
+		System.out.println("\n|--------------------------------------------------------------------------------|");
 	}
 
 	@Override
@@ -77,7 +78,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		if (buscar(agenda) == null) {
 			lista.put(String.valueOf(agenda.getId()), agenda);
 		} else {
-			System.out.println("J� existe um registro com essa CHAVE: " + agenda.getId());
+			System.out.println("Ja existe um registro com essa CHAVE: " + agenda.getId());
 		}
 	}
 
@@ -90,7 +91,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	public void editar(Agenda chave) {
 		Agenda agendaAtual = buscar(chave);
 		if (agendaAtual == null) {
-			System.out.println("N�o existe um registro com essa CHAVE: " + agendaAtual.getId());
+			System.out.println("Nao existe um registro com essa CHAVE: " + agendaAtual.getId());
 		} else {
 			lista.put(String.valueOf(chave.getId()), capturarValoresEditar());
 			System.out.println("Dados Atualizados");
@@ -101,7 +102,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	public void deletar(Agenda chave) {
 		Agenda agendaAtual = buscar(chave);
 		if (agendaAtual == null) {
-			System.out.println("N�o existe um registro com essa CHAVE: " + agendaAtual.getId());
+			System.out.println("Nao existe um registro com essa CHAVE: " + agendaAtual.getId());
 		} else {
 			lista.remove(String.valueOf(chave.getId()));
 			System.out.println("Item excluido");
@@ -162,7 +163,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 				break;
 
 			default:
-				System.out.println("Selecione uma opção valida");
+				System.out.println("Selecione uma opcao valida");
 				break;
 			}
 
@@ -173,7 +174,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		System.out.println("Informe a data do Agendamento: ");
 		agenda.setDataAgendamento(super.getEntrada().next());
 
-		System.out.println("Foi agendando uma consulta codigo: " + agenda.getId() + " com o medico: "
+		System.out.println("Foi agendando uma consulta: \nCodigo: " + agenda.getId() + " com o medico: "
 				+ agenda.getMedico().getName() + " no dia: " + agenda.getDataAgendamento() + " com o paciente: "
 				+ agenda.getPaciente().getName());
 
@@ -199,7 +200,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		System.out.println("Informe a data do Agendamento: ");
 		agenda.setDataAgendamento(super.getEntrada().next());
 
-		System.out.println("Foi agendando uma consulta codigo: " + agenda.getId() + " com o medico: "
+		System.out.println("Foi agendando uma consulta: \n Codigo: " + agenda.getId() + " com o medico: "
 				+ agenda.getMedico().getName() + " no dia: " + agenda.getDataAgendamento() + " com o paciente: "
 				+ agenda.getPaciente().getName());
 
@@ -210,7 +211,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	public void exibirDetalhes(Agenda completo) {
 
 		if (completo == null) {
-			System.out.println("N�o � poss�vel exibir os detalhes, item n�o localizado");
+			System.out.println("Nao foi possivel exibir os detalhes, item nao localizado");
 		} else {
 			System.out.println(completo.toString());
 		}
@@ -219,6 +220,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 
 	public void listarMedico(HashMap<String, Medico> listaMedico) {
 		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
+		System.out.println("|---------- CPF ----------  NOME ------ ESPECIALIDADE---|");
 		for (Medico medico : listaMedico.values()) {
 
 			System.out.println("\t" + medico.getCpf() + " - " + medico.getName() + " - " + medico.getEspecialidade());

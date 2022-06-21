@@ -28,7 +28,7 @@ public class Main {
 			}
 			switch (option) {
 			case 0:
-				System.out.println("At� a proxima!");
+				System.out.println("Ate a proxima!");
 				break;
 			case 1:
 				Login.entrar(LIMITE_TENTATIVA);
@@ -36,11 +36,11 @@ public class Main {
 			case 2:
 				Login.cadastrar(LIMITE_TENTATIVA);
 				break;
-			case 3: 
+			case 3:
 				Login.exibirInformacoesSobre();
 				break;
 			default:
-				System.out.println("Escolha uma op��o v�lida");
+				System.out.println("Escolha uma opcao valida");
 				break;
 			}
 		} while (option != 0);
@@ -53,19 +53,18 @@ public class Main {
 			options = new ArrayList<>(Arrays.asList("Entrar", "Cadastrar", "Sobre o programa"));
 		}
 
-		String menu = "|---------- Bem vindo ao programa de agenda hospitalar | ";
+		String menu = "|------------------ Bem vindo ao programa de agenda hospitalar ------------------| ";
+		menu += "\n Escolha uma opcao:";
 		menu += "\n\t0 - Sair ";
 
 		for (int option = 0; option < options.size(); option++) {
 			menu += "\n\t" + (option + 1) + " - " + options.get(option);
 		}
 
-		menu += "\n|------------------------------------------------------------|";
-		menu += "\n\t Escolha uma opcao ";
-		menu += "\n|------------------------------------------------------------|\n";
+		menu += "\n|--------------------------------------------------------------------------------|";
 
 		return menu;
-		
+
 	}
 
 }

@@ -43,7 +43,7 @@ public class AdminCRUD extends Menu implements ICrud<Admin> {
 			break;
 
 		default:
-			System.out.println("Op��o inv�lida para o menu de " + super.getTitulo());
+			System.out.println("Opcao invalida para o menu de " + super.getTitulo());
 			break;
 		}
 		return opcao;
@@ -56,7 +56,9 @@ public class AdminCRUD extends Menu implements ICrud<Admin> {
 
 	@Override
 	public void listar(HashMap<String, Admin> lista) {
-		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
+		System.out.println("---------------------------- LISTA " + getTitulo() + "------------------------------------");
+		System.out.println("\n|--------------------------------------------------------------------------------|");
+		
 		for (Admin admin : lista.values()) {
 
 			System.out.println("\t" + admin.getLogin());

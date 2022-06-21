@@ -27,10 +27,10 @@ public class Login {
 					+ (tentativa > 1 ? " tentativas" : " tentativa") + " de login:");
 		}
 		try {
-			System.out.println("Informe o LOGIN do funcionario:");
+			System.out.println("Informe o login do usuario:");
 			Admin admin = BancoFicticio.admin.get(input.next().trim());
 
-			System.out.println("Funcionario encontrado : " + admin.getLogin());
+			System.out.println("Usuario encontrado : " + admin.getLogin());
 			System.out.println("Informe a senha para liberar o acesso:");
 
 			if (!admin.getSenha().equals(input.next())) {
@@ -40,7 +40,7 @@ public class Login {
 				return;
 			}
 		} catch (NullPointerException e) {
-			System.out.println("Nenhum funcionario encontrado com esse LOGIN");
+			System.out.println("Nenhum usuario encontrado com esse login");
 			entrar(--tentativa);
 			return;
 		} catch (SenhaIncorretaException e) {
@@ -63,25 +63,25 @@ public class Login {
 					+ (tentativa > 1 ? " tentativas" : " tentativa") + " de cadastro:");
 		}
 		try {
-			System.out.println("Informe o login do novo funcionario:");
+			System.out.println("Informe o login do novo usuario:");
 			login = input.next().trim();
 			Admin admin = BancoFicticio.admin.get(login);
-			
+
 			if (admin != null) {
 				throw new SenhaIncorretaException();
 			} else {
-				
+
 				admin = new AdminCRUD().capturarValores();
 				admin.setLogin(login);
 				System.out.println("Informe a senha:");
 				senha = input.next();
 				admin.setSenha(senha);
-				
+
 				BancoFicticio.admin.put(login, admin);
 			}
 
-			System.out.println("Funcionariorio cadastrado, por favor realize o login:");
-			System.out.println("IMPORTANTE: No primeiro acesso a senha e igual ao CPF e sera solicitado a mudanca");
+			System.out.println("Usuario cadastrado, por favor realize o login!");
+//			System.out.println("IMPORTANTE: No primeiro acesso a senha e igual ao CPF e sera solicitado a mudanca");
 			return;
 
 		} catch (SenhaIncorretaException e) {
@@ -99,20 +99,20 @@ public class Login {
 			return;
 		} else {
 			System.out.println((tentativa > 1 ? "Restam " : "Resta ") + tentativa
-					+ (tentativa > 1 ? " tentativas" : " tentativa") + " de recuperaï¿½ï¿½o de senha:");
+					+ (tentativa > 1 ? " tentativas" : " tentativa") + " de recuperacao de senha:");
 		}
 		try {
 			System.out.println("Informe o login do admin:");
 			Admin admin = BancoFicticio.admin.get(input.next().trim());
 
-			System.out.println("Funcionario encontrado :" + admin.getLogin());
+			System.out.println("Usuario encontrado :" + admin.getLogin());
 			BancoFicticio.admin.put(admin.getLogin(), admin);
 			System.out.println("A senha foi atualizada");
 
 			System.out.println("Admin atualizado, por favor realize o login:");
 
 		} catch (NullPointerException e) {
-			System.out.println("Nenhum funcionario encontrado com esse CPF");
+			System.out.println("Nenhum Usuario encontrado com esse CPF");
 			recuperarSenha(--tentativa);
 			return;
 		}
@@ -130,7 +130,7 @@ public class Login {
 	public static void definirAdminoLogado(Admin admin) {
 
 		if (admin != null) {
-			
+
 			System.out.println("\nBem vindo, " + admin.getLogin());
 		} else {
 			System.out.println("Ate a proxima " + admin.getLogin() + ", volte sempre que precisar.");
@@ -148,12 +148,22 @@ public class Login {
 	}
 
 	public static void exibirInformacoesSobre() {
-		System.out.println("============================== SOBRE ==================================");
-		System.out.println(
-				"A iniciativa ï¿½ facilitar o agendamento de consultas mï¿½dicas para o paciente com profissionais de diversas ï¿½reas da sï¿½ude.\n"
-						+ "Teremos treis perfis inicialmente, o Paciente e o Mï¿½dico (que pode ser qualquer profissional da ï¿½rea da saï¿½de). Para usar o programa, basta realizar o cadastro, informando dados comuns como nome, CPF (para o profissional da saï¿½de, serï¿½ necessï¿½rio tambï¿½m o nï¿½mero de CRM, CRE, CRO ou CRP por exemplo ), endereï¿½o por exemplo.\n"
-						+ "Ambos os perfis poderï¿½o fazer cadastro e login na plataforma. Os pacientes poderï¿½o procurar qual mï¿½dico estarï¿½ disponï¿½vel no horï¿½rio que estes necessitam, eles podererï¿½o ver seus prï¿½prios agendamentos , alterar suas datas e horï¿½rios, trocar de profissional ou mesmo desmarcar uma consulta. Jï¿½ o mï¿½dico, poderï¿½ compartilhar agendas e dias disponï¿½veis para atendimento aos pacentes, visualizar seus atendimentos do dia e desmarcar uma consulta prï¿½ agendada.");
-		System.out.println("=======================================================================");
+		System.out.println("|---------------------------------- SOBRE ---------------------------------------|");
+		System.out.println("A iniciativa é facilitar o agendamento de consultas médicas para o paciente \n"
+						 + "com profissionais de diversas áreas da sáude.\n"
+						 + "Teremos três perfis inicialmente, o Paciente, o Médico - que pode ser qualquer\n"
+						 + "profissional da área da saúde - e o Admin.\n"
+						 + "Para usar o programa, basta realizar o cadastro, informando dados comuns como\n"
+						 + "nome,CPF (para o profissional da saúde,será necessário também o número de CRM,\n"
+						 + "CRE, CRO ou CRP por exemplo ), endereço por exemplo.\n"
+						 + "Ambos os perfis poderão fazer cadastro e login na plataforma. Os pacientes poderão\n"
+						 + "procurar qual médico estará disponível no horário que estes necessitam, eles \n"
+						 + "podererão ver seus próprios agendamentos , alterar suas datas e horários,trocar de\n"
+						 + "profissional ou mesmo desmarcar uma consulta. \n"
+						 + "Já o médico, poderá compartilhar agendas e dias disponíveis para atendimento aos \n"
+						 + "pacientes, visualizar seus atendimentos do dia e desmarcar uma consulta pré agendada.");
+
+		System.out.println("\n|--------------------------------------------------------------------------------|\n");
 
 	}
 

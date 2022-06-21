@@ -17,7 +17,8 @@ public class Menu {
 
 	public void executarMenu() {
 		do {
-			System.out.println("=========>   MENU " + this.title + "   <==================");
+			System.out.println("|----------------------------- MENU " + this.title + " -----------------------------------|");
+			System.out.println("\n|--------------------------------------------------------------------------------|");
 			System.out.println("-1 = Encerrar programa");
 			System.out.println(" 0 = Voltar");
 
@@ -31,9 +32,11 @@ public class Menu {
 
 		} while (capturarOpcao() != 0);
 	}
+	
 	public void executarMenuPrincipal() {
 		do {
-			System.out.println("=========>   MENU " + this.title + "   <==================");
+			System.out.println("|---------------------------- MENU " + this.title + " ------------------------------------|");
+			System.out.println("\n|--------------------------------------------------------------------------------|");
 			System.out.println(" 0 = Encerrar programa");
 
 			if (option != null && !option.isEmpty()) {

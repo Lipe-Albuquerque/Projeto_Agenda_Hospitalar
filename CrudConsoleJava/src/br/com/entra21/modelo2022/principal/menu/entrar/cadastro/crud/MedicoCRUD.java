@@ -3,10 +3,12 @@ package br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import br.com.entra21.modelo2022.principal.BancoFicticio;
 import br.com.entra21.modelo2022.principal.Menu;
+import br.com.entra21.modelo2022.principal.Turno;
 import br.com.entra21.modelo2022.principal.modelobase.Medico;
 
 public class MedicoCRUD extends Menu implements ICrud<Medico> {
@@ -42,7 +44,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 			break;
 
 		default:
-			System.out.println("Op��o inv�lida para o menu de " + super.getTitulo());
+			System.out.println("Opção inválida para o menu de " + super.getTitulo());
 			break;
 		}
 		return opcao;
@@ -58,7 +60,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
 		for (Medico medico : lista.values()) {
 
-			System.out.println("\t" + medico.getName() + " - " + medico.getEspecialidade() + " - " + medico.getCrm());
+			System.out.println("\t" + medico.getName() + " - " + medico.getEspecialidade() + " - " + medico.getCpf());
 
 		}
 
@@ -120,7 +122,8 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 	}
 
 	public Medico capturarValoresAdd() {
-
+		Scanner input = new Scanner(System.in);
+		byte option;
 		Medico formulario = new Medico();
 
 		System.out.println("Informe o Nome:");
@@ -138,6 +141,39 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		System.out.println("Informe o Cpf:");
 		formulario.setCpf(super.getEntrada().next());
 
+		System.out.println("Informe a especialidade");
+
+		formulario.setEspecialidade(super.getEntrada().next());
+
+		System.out.println("Informe o seu turno");
+		System.out.println("1 - Tuno da manha: " + Turno.MANHA + " " + Turno.MANHAFINAL);
+		System.out.println("2 - Tuno da tarde: " + Turno.TARDE + " " + Turno.TARDEFINAL);
+		System.out.println("3 - Tuno da noite: " + Turno.NOITE + " " + Turno.NOITEFINAL);
+		option = input.nextByte();
+		do {
+			switch (option) {
+			case 1:
+				System.out.println("Turno da manhã selecionado!");
+				formulario.setTurno(Turno.MANHA);
+				formulario.setTurnoFinal(Turno.MANHAFINAL);
+				break;
+			case 2:
+				System.out.println("Turno da tarde selecionado!");
+				formulario.setTurno(Turno.TARDE);
+				formulario.setTurnoFinal(Turno.TARDEFINAL);
+				break;
+			case 3:
+				System.out.println("Turno da noite selecionado!");
+				formulario.setTurno(Turno.NOITE);
+				formulario.setTurnoFinal(Turno.NOITEFINAL);
+				break;
+
+			default:
+				System.out.println("Selecione uma opção valida");
+				break;
+
+			}
+		} while (option == -200);
 		return formulario;
 
 	}
@@ -247,7 +283,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 	public void exibirDetalhes(Medico completo) {
 
 		if (completo == null) {
-			System.out.println("N�o � possivel exibir os detalhes, item n�o localizado");
+			System.out.println("Não é possivel exibir os detalhes, item não localizado");
 		} else {
 			System.out.println(completo.toString());
 		}

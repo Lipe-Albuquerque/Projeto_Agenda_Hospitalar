@@ -69,19 +69,19 @@ public class BancoFicticio {
 		medicos.put("91614967075",
 				new Medico("Robin Pereira", (byte) 18, "Outro", "916.149.670-75", "Robina Pereira", "Robin Wood",
 						"robin_batata123@yahoo.com", "49 98874-6352", "Rua Wood", "100", "88780-000", "Imbituba", "SC",
-						"BR", "Dentista", "CRM/SC 698547", LocalDate.of(2022, 3, 4).format(DateTimeFormatter.ofPattern("dd/MM/YYYY"))));
+						"BR", "Dentista", "CRM/SC 698547", Turno.MANHA,Turno.MANHAFINAL));
 
 		// medico Smallville
 		medicos.put("02323689645",
 				new Medico("Clark Kent", (byte) 35, "Masculino", "023.236.896-45", "Martha Kent", "Jonathan Kent",
 						"clarkinho_56@gmail.com", " 47 98852-9633", "Rua dos El", "1569", "56600-006", "Smallville",
-						"SC", "BR", "Oftalmologista", "CRM/SC 698512", LocalDate.of(2022, 1, 3).format(DateTimeFormatter.ofPattern("dd/MM/YYYY"))));
+						"SC", "BR", "Oftalmologista", "CRM/SC 698512", Turno.TARDE,Turno.TARDEFINAL));
 
 		// medico Joa�aba
 		medicos.put("89712348963",
 				new Medico("Diana Prince", (byte) 35, "Feminino", "897.123.489-63", "Hipolita Prince", "Zeus Prince",
 						"diana_prince@gmail.com", " 48 98854-7888", "Av das Pedras", "78", "89600-000", "Joa�aba",
-						"SC", "BR", "Neurologista", "CRM/SC 123489", LocalDate.of(2022, 12, 30).format(DateTimeFormatter.ofPattern("dd/MM/YYYY"))));
+						"SC", "BR", "Neurologista", "CRM/SC 123489", Turno.NOITE,Turno.NOITEFINAL));
 
 		
 	}

@@ -16,7 +16,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 	private HashMap<String, Medico> lista = BancoFicticio.medicos;
 
 	public MedicoCRUD() {
-		super("Medicos", opcoes);
+		super("  Medicos", opcoes);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 			break;
 
 		default:
-			System.out.println("Opção inválida para o menu de " + super.getTitulo());
+			System.out.println("Opcao invalida para o menu de " + super.getTitulo());
 			break;
 		}
 		return opcao;
@@ -58,13 +58,15 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 	@Override
 	public void listar(HashMap<String, Medico> lista) {
 		System.out.println("------------- LISTA " + getTitulo() + "-----------------");
+		System.out.println("|------------------------------ LISTA " + getTitulo() + " ----------------------------------|");
+		System.out.println("\n|---------------------------------------------------------------------------------|");
 		for (Medico medico : lista.values()) {
 
 			System.out.println("\t" + medico.getName() + " - " + medico.getEspecialidade() + " - " + medico.getCpf());
 
 		}
-
-		System.out.println("------------- QUANTIDADE (" + lista.size() + ") --------------");
+		System.out.println("|------------------------------- QUANTIDADE (" + lista.size() + ") ---------------------------------|");
+		System.out.println("|--------------------------------------------------------------------------------|\n");
 
 	}
 
@@ -75,7 +77,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		if (buscar(novo) == null) {
 			lista.put(novo.getCpf(), novo);
 		} else {
-			System.out.println("J� existe um registro com CHAVE:" + novo.getName());
+			System.out.println("Ja existe um registro com CHAVE:" + novo.getName());
 		}
 
 	}
@@ -91,7 +93,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 
 		Medico medicoAtual = buscar(chave);
 		if (medicoAtual == null) {
-			System.out.println("N�o existe um registro com CHAVE:" + chave.getName());
+			System.out.println("Nao existe um registro com CHAVE:" + chave.getName());
 		} else {
 			lista.put(chave.getCpf(), capturarValores());
 			System.out.println("Dados atualizados");
@@ -103,7 +105,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 
 		Medico medicoAtual = buscar(chave);
 		if (medicoAtual == null) {
-			System.out.println("N�o existe um registro com CHAVE:" + chave.getName());
+			System.out.println("Nao existe um registro com CHAVE:" + chave.getName());
 		} else {
 			lista.remove(chave.getCpf());
 			System.out.println("Item excluido");
@@ -153,7 +155,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		do {
 			switch (option) {
 			case 1:
-				System.out.println("Turno da manhã selecionado!");
+				System.out.println("Turno da manha selecionado!");
 				formulario.setTurno(Turno.MANHA);
 				formulario.setTurnoFinal(Turno.MANHAFINAL);
 				break;
@@ -169,7 +171,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 				break;
 
 			default:
-				System.out.println("Selecione uma opção valida");
+				System.out.println("Selecione uma opcao valida");
 				break;
 
 			}
@@ -185,14 +187,14 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		byte option;
 
 		do {
-			System.out.println("Escolha qual inforção deseja alterar: ");
+			System.out.println("Escolha qual informacao deseja alterar: ");
 			System.out.println("0-Retornar");
 			System.out.println("1-Nome");
 			System.out.println("2-Crm");
 			System.out.println("3-Idade");
 			System.out.println("4-Sexo");
 			System.out.println("5-Cpf");
-			System.out.println("6-Nome da mãe");
+			System.out.println("6-Nome da mae");
 			System.out.println("7-Nome do pai");
 			System.out.println("8-e-mail");
 			System.out.println("9-Telefone");
@@ -229,7 +231,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 				formulario.setCpf(super.getEntrada().next());
 				break;
 			case 6:
-				System.out.println("Informe o Nome da M�e:");
+				System.out.println("Informe o Nome da Mae:");
 				formulario.setNameMother(super.getEntrada().next());
 				break;
 			case 7:
@@ -249,11 +251,11 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 				formulario.setStreetAddress(super.getEntrada().next());
 				break;
 			case 11:
-				System.out.println("Informe o N�mero da Casa:");
+				System.out.println("Informe o Numero da Casa:");
 				formulario.setNumberAddress(super.getEntrada().next());
 				break;
 			case 12:
-				System.out.println("Informe o C�digo Postal");
+				System.out.println("Informe o Codigo Postal");
 				formulario.setZipCode(super.getEntrada().next());
 				break;
 			case 13:
@@ -265,13 +267,13 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 				formulario.setState(super.getEntrada().next());
 				break;
 			case 15:
-				System.out.println("Informe o Pa�s:");
+				System.out.println("Informe o Pais:");
 				formulario.setCountry(super.getEntrada().next());
 
 				break;
 
 			default:
-				System.out.println("Digite uma opção valida!");
+				System.out.println("Digite uma opcao valida!");
 				break;
 			}
 		} while (option != 0);
@@ -283,7 +285,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 	public void exibirDetalhes(Medico completo) {
 
 		if (completo == null) {
-			System.out.println("Não é possivel exibir os detalhes, item não localizado");
+			System.out.println("Nao foi possivel exibir os detalhes, item nao localizado");
 		} else {
 			System.out.println(completo.toString());
 		}

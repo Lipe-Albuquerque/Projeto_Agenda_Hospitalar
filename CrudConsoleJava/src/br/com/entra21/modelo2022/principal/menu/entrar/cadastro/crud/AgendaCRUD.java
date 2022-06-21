@@ -17,7 +17,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	private HashMap<String, Agenda> lista = BancoFicticio.agendas;
 
 	public AgendaCRUD() {
-		super("Agendas", opcoes);
+		super("Agenda --", opcoes);
 	}
 
 	public byte capturarOpcao() {
@@ -60,16 +60,16 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 
 	@Override
 	public void listar(HashMap<String, Agenda> lista) {
-		System.out.println("|------------------------------- LISTA " + getTitulo() + "-----------------------------------|");
-		System.out.println("\n|--------------------------------------------------------------------------------|");
-		System.out.println("|-------- PACIENTE ------  DATA ------ MEDICO-----|");
+		System.out.println(
+				"|------------------------------- LISTA " + getTitulo() + "-----------------------------------|");
+		System.out.println("|\t-------- PACIENTE ------  DATA ------ MEDICO-----|");
 		for (Agenda agenda : lista.values()) {
 			System.out.println("\t" + agenda.getId() + " - " + agenda.getPaciente().getName() + " - "
 					+ agenda.getDataAgendamento() + " - " + agenda.getMedico().getName());
 		}
-
-		System.out.println("-------------------------- QUANTIDADE1111 (" + lista.size() + ") ----------------------------");
-		System.out.println("\n|--------------------------------------------------------------------------------|");
+		System.out.println("|------------------------------- QUANTIDADE (" + lista.size()
+				+ ") ---------------------------------|");
+		System.out.println("|--------------------------------------------------------------------------------|\n");
 	}
 
 	@Override
@@ -138,7 +138,7 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 
 		Agenda agenda = buscar(capturarChave());
 		Scanner input = new Scanner(System.in);
-		
+
 		byte option;
 		do {
 			System.out.println("Informe qual dado deseja alterar do agendamento: " + agenda.getId());
@@ -174,15 +174,13 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		System.out.println("Informe a data do Agendamento: ");
 		agenda.setDataAgendamento(super.getEntrada().next());
 
-		System.out.println("Foi agendando uma consulta: \nCodigo: " + agenda.getId() + " com o medico: "
-				+ agenda.getMedico().getName() + " no dia: " + agenda.getDataAgendamento() + " com o paciente: "
+		System.out.println("Foi agendando uma consulta: \nCodigo: " + agenda.getId() + "\nCom o medico: "
+				+ agenda.getMedico().getName() + "\nNo dia: " + agenda.getDataAgendamento() + "\nCom o paciente: "
 				+ agenda.getPaciente().getName());
 
 		return agenda;
 	}
 
-	
-	
 	@Override
 	public Agenda capturarValores() {
 
@@ -200,8 +198,9 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 		System.out.println("Informe a data do Agendamento: ");
 		agenda.setDataAgendamento(super.getEntrada().next());
 
-		System.out.println("Foi agendando uma consulta: \n Codigo: " + agenda.getId() + " com o medico: "
-				+ agenda.getMedico().getName() + " no dia: " + agenda.getDataAgendamento() + " com o paciente: "
+		System.out.println("|--------------------------------------------------------------------------------|");
+		System.out.println("Foi agendando uma consulta: \nCodigo: " + agenda.getId() + " \nCom o medico: "
+				+ agenda.getMedico().getName() + "\nNo dia: " + agenda.getDataAgendamento() + " \nCom o paciente: "
 				+ agenda.getPaciente().getName());
 
 		return agenda;
@@ -226,8 +225,9 @@ public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 			System.out.println("\t" + medico.getCpf() + " - " + medico.getName() + " - " + medico.getEspecialidade());
 
 		}
-
-		System.out.println("------------- QUANTIDADE (" + listaMedico.size() + ") --------------");
+		System.out.println("|------------------------------- QUANTIDADE (" + listaMedico.size()
+				+ ") ---------------------------------|");
+		System.out.println("|--------------------------------------------------------------------------------|\n");
 
 	}
 

@@ -116,6 +116,7 @@ public class BancoFicticio {
 		Admin ariana = new Admin();
 		Admin thiago = new Admin();
 		Admin adm = new Admin();
+		Admin a = new Admin();
 		
 		filipe.setLogin("batatinha");
 		filipe.setSenha("laranjinha");
@@ -132,6 +133,10 @@ public class BancoFicticio {
 		adm.setLogin("admin");
 		adm.setSenha("admin");
 		admin.put(adm.getLogin(), adm);
+		
+		a.setLogin("a");
+		a.setSenha("a");
+		admin.put(a.getLogin(), a);
 		
 		
 

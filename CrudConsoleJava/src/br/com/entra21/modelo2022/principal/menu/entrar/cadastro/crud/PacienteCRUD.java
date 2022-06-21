@@ -49,7 +49,7 @@ public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 			break;
 
 		default:
-			System.out.println("Opção inválida para o menu de " + super.getTitulo());
+			System.out.println("Opcao invalida para o menu de " + super.getTitulo());
 			break;
 
 		}

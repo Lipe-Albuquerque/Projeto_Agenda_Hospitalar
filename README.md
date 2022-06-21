@@ -20,7 +20,7 @@ A Agenda Hospitalar resolve um dos principais problemas para o cidadão: encaixa
 
 A equipe é composta por 3 integrantes, sendo eles:
 <br>
-<table>
+<table align="center">
   <tr>
      <td align="center"> <!-- Ariana -->
       <a href="https://github.com/ariana-ssilva">
@@ -69,8 +69,11 @@ O projeto foi desenvolvido com apoio de nosso tutor [Rubem Oliota](https://githu
 
 ## Fluxograma
 <br> 
+
+### [Visualize o fluxograma aqui.](https://miro.com/app/board/uXjVOr0rIfw=/?share_link_id=232371427063)
+
 <center>
-<img src=./gif_img/diagrama_de_classe_atualizado.png
+<img src=./gif_img/fluxograma_exemplo.png
      alt="Diagrama de Classe" width= 100% height=100%>
      
 </center>
@@ -157,5 +160,11 @@ A Agenda Hospitalar foi baseada em Java e sua documentação foi desenvolvida us
 
 </details>
 
+<br>
+<br>
 
+## ⚙️ Como executar o projeto
+ - Para executar a Agenda Hospitalar na sua máquina basta colar no seu `git bash` o seguinte código:  `git clone https://github.com/Lipe-Albuquerque/ProjetoAula.git `. Faça isso em uma pasta na sua máquina e importe o projeto para a IDE de sua preferência.
 
+- Pode ser feito também um download .zip do projeto, descompactá-lo e importar para a IDE escolhida.
+Recomendamos o uso do Eclipse IDE cujo download  pode ser feito clicando [aqui](https://www.eclipse.org/downloads/).

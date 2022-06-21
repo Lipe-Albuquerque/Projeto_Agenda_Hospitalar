@@ -1,4 +1,4 @@
-# Projeto Entra21 - Agenda Hospitalar ( v.01)
+# Projeto Entra21 - Agenda Hospitalar ( v.01) 🏥
 
 ## Sobre o projeto: 
 
@@ -8,7 +8,7 @@ Teremos três perfis inicialmente, o Paciente, o Médico - que pode ser qualquer
 Ambos os perfis poderão fazer cadastro e login na plataforma. Os pacientes poderão procurar qual médico estará disponível no horário que estes necessitam, eles podererão ver seus próprios agendamentos , alterar suas datas e horários, trocar de profissional ou mesmo desmarcar uma consulta. Já o médico, poderá compartilhar agendas e dias disponíveis para atendimento aos pacentes, visualizar seus atendimentos do dia e desmarcar uma consulta pré agendada.
 <br>
 
-## O que a Agenda Hospitalar resolve? 
+##  O que a Agenda Hospitalar resolve? 
 
 
 A Agenda Hospitalar resolve um dos principais problemas para o cidadão: encaixar seus horários com os do profissionais da saúde. Muitas vezes fica difícil para o cidadão ter um dia de folga no trabalho para comparecer ao médico. A intenção da Agenda Hospitalar, é facilitar o agendamento dessas consultas.
@@ -58,7 +58,7 @@ O projeto foi desenvolvido com apoio de nosso tutor [Rubem Oliota](https://githu
 
 
 
-## Diagrama de Classe
+## 📈 Diagrama de Classe
 <br> 
 <center>
 <img src=./gif_img/diagrama_de_classe_atualizado.png
@@ -67,7 +67,7 @@ O projeto foi desenvolvido com apoio de nosso tutor [Rubem Oliota](https://githu
 </center>
 <br>
 
-## Fluxograma
+## 📊 Fluxograma 📊
 ### [Visualize o fluxograma aqui.](https://miro.com/app/board/uXjVOr0rIfw=/?share_link_id=232371427063)
 
 <center>
@@ -76,12 +76,12 @@ O projeto foi desenvolvido com apoio de nosso tutor [Rubem Oliota](https://githu
 </center>
 <br>
 
-## Tecnologias usadas
+## 👨🏻‍💻 Tecnologias usadas 👩🏻‍💻
 A Agenda Hospitalar foi baseada em Java e sua documentação foi desenvolvida usando Markdown.
 
 <br>
 
-## Conceitos implementados
+## 🎯 Conceitos implementados 🎯
 <details>	
   <summary><b> ⏰ Metodologias Ágeis ⏰</b></summary>
 
@@ -160,7 +160,7 @@ A Agenda Hospitalar foi baseada em Java e sua documentação foi desenvolvida us
 <br>
 <br>
 
-## ⚙️ Como executar o projeto
+## ⚙️ Como executar o projeto ⚙️
  - Para executar a Agenda Hospitalar na sua máquina basta colar no seu `git bash` o seguinte código:  `git clone https://github.com/Lipe-Albuquerque/ProjetoAula.git `. Faça isso em uma pasta na sua máquina e importe o projeto para a IDE de sua preferência.
 
 - Pode ser feito também um download .zip do projeto, descompactá-lo e importar para a IDE escolhida.

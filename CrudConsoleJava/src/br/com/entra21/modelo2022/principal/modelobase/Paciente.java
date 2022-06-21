@@ -9,7 +9,7 @@ public class Paciente extends Pessoa {
 	private LocalDate dataCadastro;
 	private LocalDateTime dataAtualizada;
 	private String password;
-	
+
 	public Paciente() {
 	}
 
@@ -33,8 +33,11 @@ public class Paciente extends Pessoa {
 	}
 
 	public String toString() {
-		return getName() + ":\n Patologia: " + getPatologia() + "\n Data de Cadastro: " + dataCadastro
-				+ "\n Data de Atualizacao:" + dataAtualizada + "\n Cpf: " + getCpf();
+		return getName() + "\n Idade: " + getAge() + "\n Patologia: " + getPatologia() + "\n Cpf: " + getCpf()
+				+ "\n Data de cadastro: " + getDataCadastro() + "\n E-mail: " + getEmail() + "\n Sexo: " + getSex()
+				+ "\n Nome da mae: " + getNameMother() + "\n Nome do pai: " + getNameFather() + "\n Telefone: "
+				+ getTelephone() + "\n Codigo Postal: " + getZipCode() + "\n Cidade: " + getCity() + "\n Estado: "
+				+ getState() + "\n Pais: " + getCountry();
 	}
 
 	public String getPatologia() {
@@ -68,7 +71,5 @@ public class Paciente extends Pessoa {
 	public void setSenha(String senha) {
 		this.password = senha;
 	}
-
-
 
 }

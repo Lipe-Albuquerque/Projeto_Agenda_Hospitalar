@@ -147,9 +147,9 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		formulario.setEspecialidade(super.getEntrada().next());
 
 		System.out.println("Informe o seu turno");
-		System.out.println("1 - Tuno da manha: " + Turno.MANHA + " " + Turno.MANHAFINAL);
-		System.out.println("2 - Tuno da tarde: " + Turno.TARDE + " " + Turno.TARDEFINAL);
-		System.out.println("3 - Tuno da noite: " + Turno.NOITE + " " + Turno.NOITEFINAL);
+		System.out.println("1 - Tuno da manha: " + Turno.MANHA.getTURNO() + " " + Turno.MANHAFINAL.getTURNO());
+		System.out.println("2 - Tuno da tarde: " + Turno.TARDE.getTURNO() + " " + Turno.TARDEFINAL.getTURNO());
+		System.out.println("3 - Tuno da noite: " + Turno.NOITE.getTURNO() + " " + Turno.NOITEFINAL.getTURNO());
 		option = input.nextByte();
 		do {
 			switch (option) {
@@ -184,7 +184,7 @@ public class MedicoCRUD extends Menu implements ICrud<Medico> {
 		Scanner input = new Scanner(System.in);
 		Medico formulario = buscar(capturarChave());
 		byte option;
-
+		//TODO
 		do {
 			System.out.println("Escolha qual informacao deseja alterar: ");
 			System.out.println("0-Retornar");

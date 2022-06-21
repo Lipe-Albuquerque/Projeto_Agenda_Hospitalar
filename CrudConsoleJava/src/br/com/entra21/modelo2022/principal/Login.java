@@ -1,15 +1,12 @@
 package br.com.entra21.modelo2022.principal;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 import br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud.AdminCRUD;
-import br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud.PacienteCRUD;
 import br.com.entra21.modelo2022.principal.menu.entrar.logado.MenuPrincipal;
 import br.com.entra21.modelo2022.principal.modelobase.Admin;
-import br.com.entra21.modelo2022.principal.modelobase.Paciente;
 import br.com.entra21.modelo2022.validador.erro.SenhaIncorretaException;
 
 public class Login {
@@ -17,8 +14,11 @@ public class Login {
 	static Scanner input = new Scanner(System.in);
 
 	public static Admin logado = null;
-
+	
+	// TODO 01 Logica - Funcao com parametro e retorno
 	public static void entrar(byte tentativa) {
+		
+		// TODO 01 Logica - Condicionais ( if e else )
 		if (tentativa == 0) {
 			System.out.println("Nao foi possivel realizar o login, todas as tentativas falharam");
 			return;
@@ -26,6 +26,7 @@ public class Login {
 			System.out.println((tentativa > 1 ? "Restam " : "Resta ") + tentativa
 					+ (tentativa > 1 ? " tentativas" : " tentativa") + " de login:");
 		}
+		// TODO 03 Java Avancado - Tratamento de erros e excecoes
 		try {
 			System.out.println("Informe o login do usuario:");
 			Admin admin = BancoFicticio.admin.get(input.next().trim());
@@ -139,6 +140,7 @@ public class Login {
 
 	}
 
+	// TODO 01 Logica - Funcao com parametro
 	private static void atualizarSenha(Admin admin) {
 
 		System.out.println("Atualize a sua senha");
@@ -146,7 +148,7 @@ public class Login {
 		verificarSenha(admin);
 
 	}
-
+	// TODO 01 Logica - Funcao sem parametro e sem retorno 
 	public static void exibirInformacoesSobre() {
 		System.out.println("|---------------------------------- SOBRE ---------------------------------------|");
 		System.out.println("A iniciativa é facilitar o agendamento de consultas médicas para o paciente \n"

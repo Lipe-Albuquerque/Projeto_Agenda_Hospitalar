@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+//TODO 03 Java Avancado - Interface e Generics
 public interface ICrud<M> {
 	
 	ArrayList<String> opcoes = new ArrayList<String>(

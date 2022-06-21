@@ -5,12 +5,12 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import br.com.entra21.modelo2022.principal.BancoFicticio;
-import br.com.entra21.modelo2022.principal.Login;
 import br.com.entra21.modelo2022.principal.Menu;
 import br.com.entra21.modelo2022.principal.modelobase.Agenda;
 import br.com.entra21.modelo2022.principal.modelobase.Medico;
 import br.com.entra21.modelo2022.principal.modelobase.Paciente;
 
+// TODO 02 POO - Heranca, encapsulamento, polimorfismo
 public class AgendaCRUD extends Menu implements ICrud<Agenda> {
 	private HashMap<String, Paciente> listaPaciente = BancoFicticio.pacientes;
 	private HashMap<String, Medico> listaMedico = BancoFicticio.medicos;

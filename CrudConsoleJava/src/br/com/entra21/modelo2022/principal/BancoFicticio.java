@@ -1,14 +1,9 @@
 package br.com.entra21.modelo2022.principal;
 
-import java.sql.Date;
-import java.text.Format;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-
 import br.com.entra21.modelo2022.principal.anotacoes.ClassesDescontinuadas;
 import br.com.entra21.modelo2022.principal.anotacoes.Lembrete;
 import br.com.entra21.modelo2022.principal.modelobase.Admin;
@@ -22,6 +17,7 @@ public class BancoFicticio {
 	@ClassesDescontinuadas
 	@Lembrete
 
+	//TODO 03 Java Avancado - HashMap
 	public static HashMap<String, Paciente> pacientes = new HashMap<>();
 
 	public static HashMap<String, Agenda> agendas = new HashMap<>();
@@ -33,12 +29,12 @@ public class BancoFicticio {
 	public static void gerarBancoDados() {
 		inicializarMedicos();
 		inicializarPacientes();
-		inicializrAgenda();
+		inicializarAgenda();
 		inicializarAdmin();
 
 	}
 
-	private static void inicializrAgenda() {
+	private static void inicializarAgenda() {
 
 		Agenda agenda1 = new Agenda();
 		agenda1.setId(1);
@@ -57,6 +53,7 @@ public class BancoFicticio {
 	}
 
 	private static void inicializarMedicos() {
+		// TODO 01 Logica - Comentarios
 		// medico Imbituba
 		medicos.put("91614967075",
 				new Medico("Robin Pereira", (byte) 18, "Outro", "916.149.670-75", "Robina Pereira", "Robin Wood",

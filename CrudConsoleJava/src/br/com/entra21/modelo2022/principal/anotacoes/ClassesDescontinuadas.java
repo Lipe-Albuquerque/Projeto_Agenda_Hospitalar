@@ -7,6 +7,6 @@ package br.com.entra21.modelo2022.principal.anotacoes;
 
 public @interface ClassesDescontinuadas {
 	
-	
+// TODO 03 Java Avancado - Annotations	
 
 }

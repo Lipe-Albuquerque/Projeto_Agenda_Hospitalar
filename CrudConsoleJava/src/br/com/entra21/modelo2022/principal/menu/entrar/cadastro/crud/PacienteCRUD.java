@@ -1,19 +1,12 @@
 package br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud;
 
-import static br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud.ICrud.opcoes;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 import br.com.entra21.modelo2022.principal.BancoFicticio;
 import br.com.entra21.modelo2022.principal.Menu;
-import br.com.entra21.modelo2022.principal.modelobase.Medico;
 import br.com.entra21.modelo2022.principal.modelobase.Paciente;
-import br.com.entra21.modelo2022.principal.modelobase.Pessoa;
 
 public class PacienteCRUD extends Menu implements ICrud<Paciente> {
 

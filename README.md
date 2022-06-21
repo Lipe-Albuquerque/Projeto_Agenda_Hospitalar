@@ -58,7 +58,7 @@ O projeto foi desenvolvido com apoio de nosso tutor [Rubem Oliota](https://githu
 
 
 
-## 📈 Diagrama de Classe
+## 📈 Diagrama de Classe 📈
 <br> 
 <center>
 <img src=./gif_img/diagrama_de_classe_atualizado.png

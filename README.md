@@ -61,7 +61,7 @@ O projeto foi desenvolvido com apoio de nosso tutor [Rubem Oliota](https://githu
 ## 📈 Diagrama de Classe 📈
 <br> 
 <center>
-<img src=./gif_img/diagrama_de_classe_atualizado_2.png
+<img src=./gif_img/diagrama_de_classe.png
      alt="Diagrama de Classe" width= 100% height=100%>
      
 </center>

@@ -167,3 +167,14 @@ A Agenda Hospitalar foi baseada em Java e sua documentação foi desenvolvida us
 Recomendamos o uso do Eclipse IDE cujo download  pode ser feito clicando [aqui](https://www.eclipse.org/downloads/).
 
 - Para fazer login, utilize admin como login e senha.
+
+<br>
+
+## Projeto Funcionando
+<br>
+
+<center>
+<img src=./gif_img/agenda_hospitalar.gif
+     alt="Diagrama de Classe" width= 100% height=100%>
+     
+</center>

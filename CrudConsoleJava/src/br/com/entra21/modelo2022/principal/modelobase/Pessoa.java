@@ -16,16 +16,7 @@ public class Pessoa {
 	private String state;
 	private String country;
 
-	public byte getAge() {
-		return age;
-	}
-
-	public void setAge(byte age) {
-		this.age = age;
-	}
-
 	public Pessoa() {
-		super();
 	}
 
 	public Pessoa(String name, byte age, String sex, String cpf, String nameMother, String nameFather, String email,
@@ -46,6 +37,7 @@ public class Pessoa {
 		this.city = city;
 		this.state = state;
 		this.country = country;
+
 	}
 
 	public String getName() {
@@ -54,6 +46,14 @@ public class Pessoa {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public byte getAge() {
+		return age;
+	}
+
+	public void setAge(byte age) {
+		this.age = age;
 	}
 
 	public String getSex() {
@@ -150,6 +150,13 @@ public class Pessoa {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	public Pessoa(String nome, byte idade, String cpf) {
+		super();
+		this.name = nome;
+		this.age = idade;
+		this.cpf = cpf;
 	}
 
 }

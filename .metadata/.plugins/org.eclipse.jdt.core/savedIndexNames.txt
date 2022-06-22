@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\User\Desktop\Entra 21\ProjetoAula\.metadata\.plugins\org.eclipse.jdt.core
-2877742915.index
-1865797976.index

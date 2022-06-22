@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import br.com.entra21.modelo2022.principal.Menu;
+import br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud.AgendaCRUD;
 import br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud.MedicoCRUD;
+import br.com.entra21.modelo2022.principal.menu.entrar.cadastro.crud.PacienteCRUD;
 
 
 public class MenuCadastro extends Menu{
@@ -13,7 +15,7 @@ public class MenuCadastro extends Menu{
 		super(titulo, opcoes);
 		
 	}
-	
+	@Override
 	public byte capturarOpcao() {
 		byte opcao = super.capturarOpcao();
 
@@ -23,7 +25,11 @@ public class MenuCadastro extends Menu{
 			break;
 
 		case 2:
-
+			new PacienteCRUD().executarMenu();
+			break;
+			
+		case 3:
+			new AgendaCRUD().executarMenu();
 			break;
 
 		default:

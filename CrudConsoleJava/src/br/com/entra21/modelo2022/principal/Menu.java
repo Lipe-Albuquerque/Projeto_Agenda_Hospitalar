@@ -4,26 +4,46 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-	private Scanner entrada;
-	private String titulo;
-	private ArrayList<String> opcoes;
+	private Scanner input;
+	private String title;
+	private ArrayList<String> option;
 
 	public Menu(String titulo, ArrayList<String> opcoes) {
 		super();
-		this.entrada = new Scanner(System.in);
-		this.titulo = titulo;
-		this.opcoes = opcoes;
+		this.input = new Scanner(System.in);
+		this.title = titulo;
+		this.option = opcoes;
 	}
 
 	public void executarMenu() {
 		do {
-			System.out.println("=========>   MENU " + this.titulo + "   <==================");
+			System.out.println("|----------------------------- MENU " + this.title + " -----------------------------------|");
+			System.out.println("\n|--------------------------------------------------------------------------------|");
 			System.out.println("-1 = Encerrar programa");
 			System.out.println(" 0 = Voltar");
 
-			if (opcoes != null && !opcoes.isEmpty()) {
-				for (int contador = 0; contador < opcoes.size(); contador++) {
-					System.out.println(" " + (contador + 1) + " = " + opcoes.get(contador));
+			if (option != null && !option.isEmpty()) {
+				// TODO 01 Logica - Operadores de incremento e decremento
+				for (int contador = 0; contador < option.size(); contador++) {
+					System.out.println(" " + (contador + 1) + " = " + option.get(contador));
+				}
+			} else {
+				System.out.println("Nao ha itens especificos para esse menu???");
+			}
+
+			// TODO 01 Logica - Operadores de igualdade
+		} while (capturarOpcao() != 0);
+	}
+	
+	public void executarMenuPrincipal() {
+		do {
+			System.out.println("|---------------------------- MENU " + this.title + " ------------------------------------|");
+			System.out.println("\n|--------------------------------------------------------------------------------|");
+			System.out.println(" 0 = Encerrar programa");
+
+			if (option != null && !option.isEmpty()) {
+				for (int contador = 0; contador < option.size(); contador++) {
+					System.out.println(" " + (contador + 1) + " = " + option.get(contador));
 				}
 			} else {
 				System.out.println("Nao ha itens especificos para esse menu???");
@@ -34,7 +54,7 @@ public class Menu {
 
 	public byte capturarOpcao() {
 		byte opcao;
-		opcao = entrada.nextByte();
+		opcao = input.nextByte();
 
 		switch (opcao) {
 
@@ -42,17 +62,17 @@ public class Menu {
 			System.exit(-1);
 			break;
 		case 0:
-			System.out.println("Menu " + this.titulo + " finalizado");
+			System.out.println("Menu " + this.title + " finalizado");
 			break;
 		}
 		return opcao;
 	}
 
 	public String getTitulo() {
-		return titulo;
+		return title;
 	}
 
 	public Scanner getEntrada() {
-		return entrada;
+		return input;
 	}
 }
